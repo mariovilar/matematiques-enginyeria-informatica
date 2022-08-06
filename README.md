@@ -14,6 +14,7 @@
   -  Programació II
   -  Física
   -  Estructura de Dades
+
 :white_check_mark: Segon curs
 - Tercer Semestre
   - Mètodes Numèrics I
@@ -27,5 +28,6 @@
   - Empresa
   - Topologia
   - Història de les Matemàtiques
+
 :eight_pointed_black_star: Tercer curs
 - Cinquè Semestre
