@@ -4,8 +4,8 @@ Podeu accedir directament als arxius utilitzant `https://mariovilar.github.io/ma
 
 A llarg termini m'agradaria deixar-los penjats en una web més xula.
 
- ---
 :white_check_mark: Primer curs
+ ---
 - Primer Semestre
   - LLenguatge i Raonament Matemàtic
   - Introducció al Càlcul Diferencial
@@ -18,8 +18,9 @@ A llarg termini m'agradaria deixar-los penjats en una web més xula.
   -  Programació II
   -  Física
   -  Estructura de Dades
----
+
 :white_check_mark: Segon curs
+---
 - Tercer Semestre
   - Mètodes Numèrics I
   - Geometria Lineal
