@@ -1,0 +1,7 @@
+**/nbproject
+**/build
+**/dist
+**/Makefile
+
+.git
+.dep.inc
