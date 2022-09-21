@@ -1,0 +1,8 @@
+**/nbproject
+**/build
+**/dist
+**/Makefile
+
+.git
+.dep.inc
+.ipynb_checkpoints
