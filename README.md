@@ -1,5 +1,5 @@
 # Mathematics and Computer Science
-### Aquests apunts i exercicis formen part de l'itinerari del doble grau de Matemàtiques i Enginyeria Informàtica de la Universitat de Barcelona, cursat entre els anys 2020 i 2026
+### Aquests apunts i exercicis formen part de l'itinerari del doble grau de Matemàtiques i Enginyeria Informàtica de la Universitat de Barcelona, cursat entre els anys 2020 i (esperem) 2026
 Podeu accedir directament als arxius utilitzant `https://mariovilar.github.io/math-cs/${PATH}`, on `${PATH}` correspon a la seva adreça dins del repositori. A tall d'exemple, si es volen consultar els apunts de Introducció al Càlcul Diferencial, `https://mariovilar.github.io/math-cs/1/primer-semestre/ICD/Apunts/ICD.pdf`.
 
 A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant teniu aquesta opció o, també, els teniu [aquí](https://www.vilar.dev/notes).
