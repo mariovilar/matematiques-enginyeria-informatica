@@ -3,6 +3,7 @@
 **/dist
 **/Makefile
 
+.DS_Store
 .git
 .dep.inc
 .ipynb_checkpoints
