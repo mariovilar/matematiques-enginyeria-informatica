@@ -1,0 +1,43 @@
+.DATA 00h 00h
+01h 02h 03h 04h 05h 
+06h 07h 08h 09h 00h 
+00h 00h 00h 00h 00h 
+.ORG 00h 01h
+21h 00h 00h 
+01h 0Ah 00h 
+16h 05h 
+5Eh 
+02h 
+23h 
+03h 
+15h 
+F2h 08h 01h 
+21h 05h 00h 
+01h 0Ah 00h 
+16h 05h 
+5Eh 
+0Ah 
+83h 
+02h 
+23h 
+03h 
+15h 
+F2h 18h 01h 
+76h 
+.ORG 50h 01h
+E5h 
+C5h 
+D5h 
+F5h 
+06h 55h 
+7Eh 
+EEh 55h 
+77h 
+23h 
+15h 
+F2h 56h 01h 
+F1h 
+D1h 
+C1h 
+E1h 
+C9h 

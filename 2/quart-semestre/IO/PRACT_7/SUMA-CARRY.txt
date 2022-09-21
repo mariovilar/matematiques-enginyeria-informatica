@@ -1,0 +1,117 @@
+.define
+	numbers_count 10
+.org 0024h
+	call string_in
+	call operation
+	ret
+.org 100h
+	pila:
+.org 200h
+	lxi h,pila 
+	sphl
+	lxi b, e000h 
+	bucle:
+		jmp bucle												
+.data 150h
+	allowed: db 30h,31h,32h,33h,34h,35h,36h,37h,38h,39h,2Bh,2Dh,26h,7Ch,3Dh
+	digits_n1: db 00h, 00h, 00h
+	signe_n1: db 00h
+	n1: db 00h
+	digits_n2: db 00h, 00h, 02h
+	signe_n2: db 00h
+	n2: db 00h
+	sol_digits: db 00h, 00h, 00h
+	sol_signe: db 00h
+	sol: db 00h
+	op: db 00h
+.org 300h
+; —————————————————————————————————————————————————————————————————————————
+string_in:
+	in 00h
+	cpi 00h
+	jz no_tecla
+	tecla:
+		call check_allowed
+		cpi 00h
+		jz no_tecla
+		cpi 43h
+		jz clear
+		stax b
+		inx b
+		ret
+	no_tecla:
+		ret
+	check_allowed: ; no comentarem aquesta rutina, ho hem fet abans
+		push d
+		push h
+		mvi e, allowed_count 
+		lxi h, allowed
+		allowed_loop:
+			mov d,m
+			cmp d
+			jz is_allowed
+			inx h
+			dcr e
+			jnz allowed_loop
+		jmp not_allowed
+		is_allowed: 
+			mov a,d
+			jmp end_allowed 
+		not_allowed:
+			mvi a,00h 
+		end_allowed:
+			pop h 
+			pop d 
+		ret
+	; PER NETEJAR LA PANTALLA EN CAS QUE HAGUEM ACABAT LA OP. AMB TECLA C
+	clear:
+		lxi h,0000h
+		mov l,c
+		clear_loop:
+			mvi a,00h
+			stax b
+			dcx b
+			dcx h
+			add l ; activem bit zero si cal
+			jnz clear_loop
+		stax b
+		ret
+; —————————————————————————————————————————————————————————————————————————
+operation:
+	cpi 3Dh
+	jz trigger
+	ret
+	trigger:
+		call read
+		call operate 
+		ret
+	read:
+		lxi b,e000h
+		ldax b
+		sui 30h ; restem 30, passem ASCII a hex
+		mov e,a ; usem DE
+		inx b 
+		inx b ; ignorem el signe 
+		ldax b
+		sui 30h ; restem 30, passem ASCII a hex
+		mov l,a ; usem HL
+		inx b
+		ret
+	operate:
+		inx b ; ignorem el signe igualtat
+		mov a,e ; usem DE
+		add l ; acumulador emmagatzema la suma
+		cpi 0Ah
+		jp carry ; al ser superior que 0Ah es tracta a part
+		stax b
+		inx b
+		ret
+	carry:
+		mov e,a
+		mvi a,31h
+		stax b
+		inx b
+		mvi a,0Ah
+		sub e
+		adi 30h
+		ret
