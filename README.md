@@ -4,6 +4,8 @@ Podeu accedir directament als arxius utilitzant `https://mariovilar.github.io/ma
 
 A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant teniu aquesta opció o, també, els teniu [aquí](https://www.vilar.dev/notes).
 
+### Aquesta obra està subjecta a una llicència *Reconeixement-NoComercial-SenseObraDerivada 4.0 Internacional*.
+
 :white_check_mark: Primer curs
  ---
 - Primer Semestre
