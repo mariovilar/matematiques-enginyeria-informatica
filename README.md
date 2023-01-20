@@ -42,3 +42,8 @@ A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant
 :eight_pointed_black_star: Tercer curs
 ---
 - Cinquè Semestre
+  - Estructures Algebraiques
+  - Càlcul Diferencial en Diverses Variables
+  - Electrònica
+  - Disseny de Software
+  - Estructura de Computadors
