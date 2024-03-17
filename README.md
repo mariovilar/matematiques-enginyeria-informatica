@@ -39,7 +39,7 @@ A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant
   - Topologia
   - Història de les Matemàtiques
 
-:eight_pointed_black_star: Tercer curs
+:white_check_mark: Tercer curs
 ---
 - Cinquè Semestre
   - Estructures Algebraiques
@@ -47,3 +47,18 @@ A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant
   - Electrònica
   - Disseny de Software
   - Estructura de Computadors
+- Sisè Semestre
+  - Geometria Projectiva
+  - Càlcul Integral en Diverses Variables
+  - Programació d'Arquitectures Encastades
+  - Projecte Integrat de Software
+  - Sistemes Operatius I
+
+:eight_pointed_black_star: Quart curs
+---
+- Cinquè Semestre
+  - Equacions Algebraiques
+  - Anàlisi Matemàtica
+  - Probabilitats
+  - Sistemes Operatius II
+  - Intel·ligència Artificial
