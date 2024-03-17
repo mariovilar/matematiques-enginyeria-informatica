@@ -56,7 +56,7 @@ A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant
 
 :eight_pointed_black_star: Quart curs
 ---
-- Cinquè Semestre
+- Setè Semestre
   - Equacions Algebraiques
   - Anàlisi Matemàtica
   - Probabilitats
