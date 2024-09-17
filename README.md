@@ -54,7 +54,7 @@ A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant
   - Projecte Integrat de Software
   - Sistemes Operatius I
 
-:eight_pointed_black_star: Quart curs
+:white_check_mark: Quart curs
 ---
 - Setè Semestre
   - Equacions Algebraiques
@@ -62,3 +62,18 @@ A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant
   - Probabilitats
   - Sistemes Operatius II
   - Intel·ligència Artificial
+- Vuitè Semestre
+  - Geometria Diferencial de Corbes i Superfícies
+  - Estadística
+  - Models Matemàtics i Sistemes Dinàmics
+  - Bases de Dades
+  - Factors Humans i Computació
+
+:eight_pointed_black_star: Cinquè curs
+---
+- Novè Semestre
+  - Anàlisi Complexa
+  - Mètodes Numèrics II
+  - Taller de Nous Usos de la Informàtica
+  - Visió Artificial
+  - Xarxes
