@@ -1,9 +1,9 @@
-# :computer: Matemàtiques i Enginyeria Informàtica, UB :hourglass:
+# :computer: Mathematics and Computer Science Repository (MCSR) :hourglass:
 ### Aquests apunts i exercicis formen part de l'itinerari del doble grau de Matemàtiques i Enginyeria Informàtica de la Universitat de Barcelona, cursat entre els anys 2020 i (esperem) 2026
 
 > **Note**
 > 
-> Podeu accedir directament als arxius utilitzant `https://mariovilar.github.io/matematiques-enginyeria-informatica/${PATH}`, on `${PATH}` correspon a la seva adreça dins del repositori. A tall d'exemple, si es volen consultar els apunts de Introducció al Càlcul Diferencial, `https://mariovilar.github.io/matematiques-enginyeria-informatica/1/primer-semestre/ICD/ICD.pdf`.
+> Podeu accedir directament als arxius utilitzant `https://mariovilar.github.io/MCSR/${PATH}`, on `${PATH}` correspon a la seva adreça dins del repositori. A tall d'exemple, si es volen consultar els apunts de Introducció al Càlcul Diferencial, `https://mariovilar.github.io/MCSR/1/primer-semestre/ICD/ICD.pdf`.
 
 A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant teniu aquesta opció o, també, els teniu [aquí](https://www.vilar.dev/notes). Com us podeu imaginar, solament puc penjar el que he escrit o creat jo personalment. En aquest sentit, si busqueu accedir a molt contingut, el Drive de la facultat segueix sent la millor opció de lluny.
 
@@ -69,7 +69,7 @@ A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant
   - Bases de Dades
   - Factors Humans i Computació
 
-:eight_pointed_black_star: Cinquè curs
+:white_check_mark: Cinquè curs
 ---
 - Novè Semestre
   - Anàlisi Complexa
@@ -77,3 +77,8 @@ A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant
   - Taller de Nous Usos de la Informàtica
   - Visió Artificial
   - Xarxes
+- Desè Semestre
+  - Equacions Diferencials Ordinàries
+  - Sistemes Distribuïts
+  - Gràfics i Visualització de Dades
+  - Lògica i Llenguatges
