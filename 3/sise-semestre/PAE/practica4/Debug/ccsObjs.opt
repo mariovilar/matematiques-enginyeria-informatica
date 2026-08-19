@@ -1,0 +1,1 @@
+"./RxTx.obj" "./interrupcions.obj" "./main.obj" "./moviments.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./timer.obj" "../lib_PAE.lib" "../msp432p401r.cmd" -llibc.a 
