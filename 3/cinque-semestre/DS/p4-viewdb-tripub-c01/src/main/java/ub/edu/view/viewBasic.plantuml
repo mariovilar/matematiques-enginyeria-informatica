@@ -1,0 +1,316 @@
+@startuml
+
+title __VIEW's Class Diagram__\n
+
+
+
+      namespace view {
+        abstract class ub.edu.view.Escena {
+            # stage : Stage
+            + setController()
+            + setStage()
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.EscenaAllotjaments {
+            + allotjament_btn : Button
+            + allotjament_pane : AnchorPane
+            + allotjament_text : Text
+            {static} - ESPAI_ENTRE_BOTONS : double
+            - correu_persona : String
+            - id_localitzacio : Integer
+            - id_ruta : Integer
+            - id_tram_etapa : Integer
+            + mostrarFinestraValorarAllotjament()
+            + popularAllotjaments()
+            + start()
+            - createAllotjamentButton()
+            - createAllotjamentText()
+        }
+      }
+
+      namespace view {
+        enum EscenaFactory {
+          INSTANCE
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.EscenaLogin {
+            + cancel_btn : Button
+            + login_btn : Button
+            + login_correu : TextField
+            + login_pwd : PasswordField
+            + register_btn : Button
+            - correu : String
+            + onCancelButtonClick()
+            + start()
+            # onLoginButtonClick()
+            # onRegisterWindow()
+            - event_goMain()
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.EscenaMain {
+            + button1_abajo_main : Button
+            + button2_abajo_main : Button
+            + button3_abajo_main : Button
+            + button_der_resetFiltres_main : Button
+            + button_izq_resetFiltres_main : Button
+            + comboBox_main_comarca : ComboBox
+            + comboBox_main_grup : ComboBox
+            + comboBox_main_localitat : ComboBox
+            + image_main : ImageView
+            + nomColumn : TableColumn
+            + ruta_btn : Button
+            + rutes_pane : AnchorPane
+            + tableTop10Valorades : TableView
+            + textPrincipal : Text
+            + valueColumn : TableColumn
+            {static} - ESPAI_ENTRE_BOTONS : double
+            - correuPersona : String
+            - id_grup : Integer
+            + asignarTextoPrincipal_Correo_y_Grupo()
+            + asignarimagen()
+            + observable_comboBox_main_grup()
+            + onButton1Click()
+            + onButton2Click()
+            + onButton3Click()
+            + onButtonDerResetFiltresClick()
+            + onButtonIzqResetFiltresClick()
+            + popularComboBoxComarques()
+            + popularComboBoxLocalitat()
+            + start()
+            - createRutaButton()
+            - mostrarFinestraRuta()
+            - popularRutesPerNom()
+            - popularTopXYZValorades()
+        }
+      }
+
+        class ub.edu.view.EscenaMain.DataTop {
+            - nom : SimpleStringProperty
+            - value : SimpleStringProperty
+            + getNom()
+            + getValue()
+            ~ DataTop()
+        }
+
+
+      namespace view {
+        class ub.edu.view.EscenaRegister {
+            + comboBox_register_grup : ComboBox
+            + radioButton_Group1_Text1 : RadioButton
+            + radioButton_Group1_Text2 : RadioButton
+            + registre_btn : Button
+            + registre_cognoms : TextField
+            + registre_correu : TextField
+            + registre_dni : TextField
+            + registre_grup : TextField
+            + registre_nom : TextField
+            + registre_pwd : PasswordField
+            + registre_pwd_repeat : PasswordField
+            + tornarLogin_reg_btn : Button
+            + initDisabled()
+            + initObservers()
+            + initialize_RB()
+            + onRegistreButtonClick()
+            + onTornarLoginButtonClick()
+            + popularGrups()
+            + start()
+            - event_goLogin()
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.EscenaReservarAllotjament {
+            + button_cancel : Button
+            + button_reservar : Button
+            + nomAllotjamant_text : Text
+            + preuEsmorzar_text : Text
+            + preuMP_text : Text
+            + preuPC_text : Text
+            + preuPerNitAllotjament_text : Text
+            + radioButton_Group1_Text1 : RadioButton
+            + radioButton_Group1_Text2 : RadioButton
+            + radioButton_Group1_Text3 : RadioButton
+            - correu_persona : String
+            - id_allotjament : Integer
+            - id_ruta : Integer
+            - id_tram_etapa : Integer
+            + onButtonCancelarClick()
+            + onButtonReservarClick()
+            + start()
+            - initialize_RB()
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.EscenaRutaDetalls {
+            + data_text_caracteristiques : Text
+            + data_text_cost : Text
+            + data_text_dataCreacio : Text
+            + data_text_descripcio : Text
+            + data_text_desti : Text
+            + data_text_dificultat : Text
+            + data_text_distancia : Text
+            + data_text_durada : Text
+            + data_text_id : Text
+            + data_text_nom : Text
+            + data_text_origen : Text
+            + data_text_tipusRuta : Text
+            + desti_btn : Button
+            + nomRuta_text : Text
+            + origen_btn : Button
+            + trams_btn : Button
+            + valorar_btn : Button
+            - correu_persona : String
+            - id_ruta : Integer
+            + initData()
+            + initObserverDesti()
+            + initObserverOrigen()
+            + onBtnValorarClick()
+            + onBtntramsDetallsClick()
+            + start()
+            - mostrarFinestraTramTrackPdPDetalls()
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.EscenaTramDetalls {
+            + tram_btn : Button
+            + tram_pane : AnchorPane
+            {static} - ESPAI_ENTRE_BOTONS : double
+            - correu_persona : String
+            - id_ruta : Integer
+            + popularTrams()
+            + start()
+            - createEtapaOrTracksButton()
+            - mostrarFinestraTramEtapaDetalls()
+            - mostrarFinestraTramTrackPdPDetalls()
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.EscenaTramEtapaDetalls {
+            + data_text_desti : Text
+            + data_text_origen : Text
+            + data_text_principal : Text
+            + desti_btn : Button
+            + origen_btn : Button
+            - correu_persona : String
+            - id_ruta : Integer
+            - id_tramEtapa : Integer
+            + start()
+            - mostrarFinestraTramTrackPdPDetalls()
+            - popularEtapes()
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.EscenaTramTrackPdPDetalls {
+            + tramTrack_btn : Button
+            + tramTrack_pane : AnchorPane
+            + tramTrack_text1 : Text
+            + tramTrack_text2 : Text
+            {static} - ESPAI_ENTRE_BOTONS : double
+            - correu_persona : String
+            - id_ruta : Integer
+            - id_tram_track : Integer
+            + mostrarFinestraValorarPuntDePas()
+            + popularPuntDePas()
+            + start()
+            - createEtapaOrTracksButton()
+            - createEtapaOrTracksText()
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.EscenaValorarPuntDePas {
+            + button_cancel : Button
+            + button_valorar : Button
+            + radioButton_Group1_Dislike : RadioButton
+            + radioButton_Group1_Like : RadioButton
+            + radioButton_Group2_Text1 : RadioButton
+            + radioButton_Group2_Text2 : RadioButton
+            + radioButton_Group2_Text3 : RadioButton
+            + radioButton_Group2_Text4 : RadioButton
+            + radioButton_Group2_Text5 : RadioButton
+            + radioButton_Group3_Text1 : RadioButton
+            + radioButton_Group3_Text2 : RadioButton
+            - correu_persona : String
+            - id_PuntDePas : Integer
+            - id_ruta : Integer
+            - id_tram_track : Integer
+            + initDisabled_RB()
+            + initObservers_RB()
+            + onButtonCancelarClick()
+            + onButtonValorarClick()
+            + start()
+            - initialize_RB()
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.EscenaValorarRuta {
+            + button_cancel : Button
+            + button_valorar : Button
+            + radioButton_G1_Text1 : RadioButton
+            + radioButton_G2_Text2 : RadioButton
+            + radioButton_G3_Text3 : RadioButton
+            + radioButton_Group1_Dislike : RadioButton
+            + radioButton_Group1_Like : RadioButton
+            + radioButton_Group2_Text1 : RadioButton
+            + radioButton_Group2_Text2 : RadioButton
+            + radioButton_Group2_Text3 : RadioButton
+            + radioButton_Group2_Text4 : RadioButton
+            + radioButton_Group3_Text1 : RadioButton
+            + radioButton_Group3_Text2 : RadioButton
+            + radioButton_Group3_Text3 : RadioButton
+            + radioButton_Group3_Text4 : RadioButton
+            + radioButton_Group3_Text5 : RadioButton
+            - correu_persona : String
+            - id_ruta : Integer
+            + initDisabled()
+            + initObservers()
+            + onButtonCancelarClick()
+            + onButtonValorarClick()
+            + start()
+            - initialize_RB()
+        }
+      }
+
+      namespace view {
+        class ub.edu.view.Vista {
+            + Vista()
+        }
+      }
+
+  
+
+  ub.edu.view.Escena o-- ub.edu.controller.Controller : controller
+  ub.edu.view.EscenaAllotjaments -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaLogin -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaMain -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaMain +-down- ub.edu.view.EscenaMain.DataTop
+  ub.edu.view.EscenaRegister -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaReservarAllotjament -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaRutaDetalls -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaTramDetalls -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaTramEtapaDetalls -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaTramTrackPdPDetalls -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaValorarPuntDePas -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaValorarRuta -up-|> ub.edu.view.Escena
+  ub.edu.view.Vista o-- ub.edu.controller.Controller : controller
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

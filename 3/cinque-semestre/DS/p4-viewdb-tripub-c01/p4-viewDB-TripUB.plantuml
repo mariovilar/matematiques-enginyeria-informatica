@@ -1,0 +1,1266 @@
+@startuml
+
+title __P4-VIEWDB-TRIPUB's Class Diagram__\n
+
+      class ub.edu.AppMain {
+      }
+
+      namespace controller {
+        class ub.edu.controller.Controller {
+        }
+      }
+
+      namespace controller {
+        class ub.edu.controller.SessionMemory {
+        }
+      }
+
+
+
+      namespace model {
+        class ub.edu.model.Allotjament {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Bicicleta {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Camping {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.CasaRural {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Comarca {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Cotxe {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Etapa {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Grup {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Hotel {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Localitat {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.ModelFacade {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Opinio {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.PerfilPersona {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Persona {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.PuntDePas {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Refugi {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Reserva {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Ruta {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Seguretat {
+        }
+      }
+
+      namespace model {
+        enum StatusType {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Tram {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.TramEtapa {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.TramTrack {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Transport {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.TripUB {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.Vot {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.XarxaPersones {
+        }
+      }
+
+      namespace model {
+        class ub.edu.model.aPeu {
+        }
+      }
+
+      namespace resources {
+        class ub.edu.resources.ResourcesFacade {
+        }
+      }
+
+      namespace resources {
+        namespace dao {
+          interface ub.edu.resources.dao.DAO {
+          }
+        }
+      }
+
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOAPeu {
+            }
+          }
+        }
+
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOAllotjament {
+            }
+          }
+        }
+      }
+
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOBicicleta {
+            }
+          }
+        }
+      }
+
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOCamping {
+            }
+          }
+        }
+      }
+
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOCasaRural {
+            }
+          }
+        }
+      }
+
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOComarca {
+            }
+          }
+        }
+      }
+
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOCotxe {
+            }
+          }
+        }
+      }
+
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOEtapa {
+            }
+          }
+        }
+      }
+
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOGrup {
+              }
+            }
+          }
+        }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOGrupFormatPerPersones {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOHotel {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOLocalitat {
+            }
+          }
+        }
+      }
+    }
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOOpinio {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOPersona {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOPersonesRealitzaRuta {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOPuntDePas {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAORefugi {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAORelacioComarcaRuta {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAORelacioComarcaRuta_2 {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOReserva {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAORuta {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOTipusOpinio {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOTipusVot {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOTram {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOTramEtapa {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOTramTrack {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOTransport {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOTransportPossiblePerAlTram {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOTripUB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DAO_Interfaces {
+            interface ub.edu.resources.dao.DAO_Interfaces.DAOVot {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOAPeuDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOAllotjamentDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOBicicletaDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOCampingDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOCasaRuralDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOComarcaDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOCotxeDB {
+            }
+          }
+        }
+      }
+    }
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOEtapaDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOGrupDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOGrup_FormatPer_PersonesDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOHotelDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOLocalitatDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOOpinioDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOPersonaDB {
+            }
+          }
+        }
+      }
+    }
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOPersones_Realitza_RutaDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOPuntDePasDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAORefugiDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAORelacio_Comarca_RutaDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOReservaDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAORutaDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOTipusOpinioDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOTipusVotDB {
+            }
+          }
+        }
+      }
+    }
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOTramDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOTramEtapaDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOTramTrackDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOTransportDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOTransport_PossiblePerAl_TramDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOTripUBDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.DAO_Implementations {
+            class ub.edu.resources.dao.DB.DAO_Implementations.DAOVotDB {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace DB.Data {
+            class ub.edu.resources.dao.DB.Data.CRUD_Tables {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace MOCK {
+            class ub.edu.resources.dao.MOCK.DAOComarcaMOCK {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace MOCK {
+            class ub.edu.resources.dao.MOCK.DAOPersonaMOCK {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace MOCK {
+            class ub.edu.resources.dao.MOCK.DAORelacioComarcaRutaMOCK {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          namespace MOCK {
+            class ub.edu.resources.dao.MOCK.DAORutaMOCK {
+            }
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          class ub.edu.resources.dao.Parell {
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          class ub.edu.resources.dao.Quartet {
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace dao {
+          class ub.edu.resources.dao.Triplet {
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace service {
+          interface ub.edu.resources.service.AbstractFactoryData {
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace service {
+          class ub.edu.resources.service.DataService {
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace service {
+          class ub.edu.resources.service.FactoryDB {
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace resources {
+        namespace service {
+          class ub.edu.resources.service.FactoryMOCK {
+          }
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        abstract class ub.edu.view.Escena {
+        }
+      }
+    }
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaAllotjaments {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        enum EscenaFactory {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaLogin {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaMain {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaRegister {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaReservarAllotjament {
+        }
+      }
+    }
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaRutaDetalls {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaTramDetalls {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaTramEtapaDetalls {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaTramTrackPdPDetalls {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaValorarPuntDePas {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.EscenaValorarRuta {
+        }
+      }
+    }
+
+
+    namespace b.edu {
+      namespace view {
+        class ub.edu.view.Vista {
+        }
+      }
+    }
+
+
+  ub.edu.AppMain -up-|> javafx.application.Application
+  ub.edu.AppMain o-- ub.edu.controller.Controller : controller
+  ub.edu.AppMain o-- ub.edu.view.Vista : vista
+  ub.edu.controller.Controller o-- ub.edu.resources.ResourcesFacade : inicialitzador
+  ub.edu.controller.Controller o-- ub.edu.model.ModelFacade : modelFacade
+  ub.edu.controller.Controller o-- ub.edu.controller.SessionMemory : sessionMemory
+  ub.edu.controller.Controller o-- ub.edu.model.TripUB : tripUB
+  ub.edu.model.Allotjament o-- ub.edu.model.Etapa : etapa
+  ub.edu.model.Bicicleta -up-|> ub.edu.model.Transport
+  ub.edu.model.Camping -up-|> ub.edu.model.Allotjament
+  ub.edu.model.CasaRural -up-|> ub.edu.model.Allotjament
+  ub.edu.model.Cotxe -up-|> ub.edu.model.Transport
+  ub.edu.model.Etapa -up-|> ub.edu.model.Localitat
+  ub.edu.model.Hotel -up-|> ub.edu.model.Allotjament
+  ub.edu.model.Localitat o-- ub.edu.model.Comarca : comarca
+  ub.edu.model.ModelFacade o-- ub.edu.model.TripUB : tripUB
+  ub.edu.model.Opinio o-- ub.edu.model.Persona : persona
+  ub.edu.model.Opinio o-- ub.edu.model.PuntDePas : puntDePas
+  ub.edu.model.Persona o-- ub.edu.model.PerfilPersona : perfil
+  ub.edu.model.PuntDePas -up-|> ub.edu.model.Localitat
+  ub.edu.model.Refugi -up-|> ub.edu.model.Allotjament
+  ub.edu.model.Reserva o-- ub.edu.model.Allotjament : allotjament
+  ub.edu.model.Reserva o-- ub.edu.model.Persona : persona
+  ub.edu.model.Ruta o-- ub.edu.model.Localitat : localitatDesti
+  ub.edu.model.Ruta o-- ub.edu.model.Localitat : localitatOrigen
+  ub.edu.model.TramEtapa -up-|> ub.edu.model.Tram
+  ub.edu.model.TramEtapa o-- ub.edu.model.Etapa : etapaDesti
+  ub.edu.model.TramEtapa o-- ub.edu.model.Etapa : etapaOrigen
+  ub.edu.model.TramTrack -up-|> ub.edu.model.Tram
+  ub.edu.model.TramTrack o-- ub.edu.model.PuntDePas : puntDePasDesti
+  ub.edu.model.TramTrack o-- ub.edu.model.PuntDePas : puntDePasOrigen
+  ub.edu.model.TripUB o-- ub.edu.model.XarxaPersones : xarxaPersones
+  ub.edu.model.Vot o-- ub.edu.model.Grup : grup
+  ub.edu.model.Vot o-- ub.edu.model.Persona : persona
+  ub.edu.model.Vot o-- ub.edu.model.Ruta : ruta
+  ub.edu.model.aPeu -up-|> ub.edu.model.Transport
+  ub.edu.resources.ResourcesFacade o-- ub.edu.resources.service.DataService : dataService
+  ub.edu.resources.ResourcesFacade o-- ub.edu.resources.service.AbstractFactoryData : factory
+  ub.edu.resources.ResourcesFacade o-- ub.edu.model.ModelFacade : modelFacade
+  ub.edu.resources.ResourcesFacade o-- ub.edu.model.TripUB : tripUB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOAPeuDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOAPeu
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOAPeuDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOTransportDB : daoTransportDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOAPeuDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOAllotjamentDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOAllotjament
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOAllotjamentDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOBicicletaDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOBicicleta
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOBicicletaDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOTransportDB : daoTransportDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOBicicletaDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOCampingDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOCamping
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOCampingDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOAllotjamentDB : daoAllotjamentDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOCampingDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOCasaRuralDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOCasaRural
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOCasaRuralDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOAllotjamentDB : daoAllotjamentDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOCasaRuralDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOComarcaDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOComarca
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOComarcaDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOCotxeDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOCotxe
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOCotxeDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOTransportDB : daoTransportDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOCotxeDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOEtapaDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOEtapa
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOEtapaDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOLocalitatDB : daoLocalitatDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOEtapaDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOGrupDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOGrup
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOGrupDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOGrup_FormatPer_PersonesDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOGrupFormatPerPersones
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOGrup_FormatPer_PersonesDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOHotelDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOHotel
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOHotelDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOAllotjamentDB : daoAllotjamentDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOHotelDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOLocalitatDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOLocalitat
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOLocalitatDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOOpinioDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOOpinio
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOOpinioDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOTipusOpinioDB : daoTipusOpinioDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOOpinioDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOPersonaDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOPersona
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOPersonaDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOPersones_Realitza_RutaDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOPersonesRealitzaRuta
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOPersones_Realitza_RutaDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOPuntDePasDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOPuntDePas
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOPuntDePasDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOLocalitatDB : daoLocalitatDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOPuntDePasDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAORefugiDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAORefugi
+  ub.edu.resources.dao.DB.DAO_Implementations.DAORefugiDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOAllotjamentDB : daoAllotjamentDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAORefugiDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAORelacio_Comarca_RutaDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAORelacioComarcaRuta_2
+  ub.edu.resources.dao.DB.DAO_Implementations.DAORelacio_Comarca_RutaDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOReservaDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOReserva
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOReservaDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAORutaDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAORuta
+  ub.edu.resources.dao.DB.DAO_Implementations.DAORutaDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTipusOpinioDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOTipusOpinio
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTipusOpinioDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTipusVotDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOTipusVot
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTipusVotDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTramDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOTram
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTramDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTramEtapaDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOTramEtapa
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTramEtapaDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOTramDB : daoTramDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTramEtapaDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTramTrackDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOTramTrack
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTramTrackDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOTramDB : daoTramDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTramTrackDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTransportDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOTransport
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTransportDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTransport_PossiblePerAl_TramDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOTransportPossiblePerAlTram
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTransport_PossiblePerAl_TramDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTripUBDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOTripUB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOTripUBDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOVotDB .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOVot
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOVotDB o-- ub.edu.resources.dao.DB.DAO_Implementations.DAOTipusVotDB : daoTipusVotDB
+  ub.edu.resources.dao.DB.DAO_Implementations.DAOVotDB o-- ub.edu.resources.dao.DB.Data.CRUD_Tables : crud_tables
+  ub.edu.resources.dao.MOCK.DAOComarcaMOCK .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOComarca
+  ub.edu.resources.dao.MOCK.DAOPersonaMOCK .up.|> ub.edu.resources.dao.DAO_Interfaces.DAOPersona
+  ub.edu.resources.dao.MOCK.DAORelacioComarcaRutaMOCK .up.|> ub.edu.resources.dao.DAO_Interfaces.DAORelacioComarcaRuta
+  ub.edu.resources.dao.MOCK.DAORutaMOCK .up.|> ub.edu.resources.dao.DAO_Interfaces.DAORuta
+  ub.edu.resources.dao.Parell o-- T : element1
+  ub.edu.resources.dao.Parell o-- V : element2
+  ub.edu.resources.dao.Quartet o-- T : element1
+  ub.edu.resources.dao.Quartet o-- V : element2
+  ub.edu.resources.dao.Quartet o-- W : element3
+  ub.edu.resources.dao.Quartet o-- X : element4
+  ub.edu.resources.dao.Triplet o-- T : element1
+  ub.edu.resources.dao.Triplet o-- V : element2
+  ub.edu.resources.dao.Triplet o-- W : element3
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOAllotjament : daoAllotjament
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOBicicleta : daoBicicleta
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOCamping : daoCamping
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOCasaRural : daoCasaRural
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOComarca : daoComarca
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOCotxe : daoCotxe
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOEtapa : daoEtapa
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOGrup : daoGrup
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOGrupFormatPerPersones : daoGrupFormatPerPersones
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOHotel : daoHotel
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOLocalitat : daoLocalitat
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOOpinio : daoOpinio
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOPersona : daoPersona
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOPersonesRealitzaRuta : daoPersonesRealitzaRuta
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOPuntDePas : daoPuntDePas
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAORefugi : daoRefugi
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAORelacioComarcaRuta : daoRelacioRutaComarca
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAORelacioComarcaRuta_2 : daoRelacioRutaComarca2
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOReserva : daoReserva
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAORuta : daoRuta
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOTipusOpinio : daoTipusOpinio
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOTipusVot : daoTipusVot
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOTram : daoTram
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOTramEtapa : daoTramEtapa
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOTramTrack : daoTramTrack
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOTransport : daoTransport
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOTransportPossiblePerAlTram : daoTransportPosibleTram
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOTripUB : daoTripUB
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOVot : daoVot
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAO_Interfaces.DAOAPeu : daoaPeu
+  ub.edu.resources.service.FactoryDB .up.|> ub.edu.resources.service.AbstractFactoryData
+  ub.edu.resources.service.FactoryMOCK .up.|> ub.edu.resources.service.AbstractFactoryData
+  ub.edu.view.Escena o-- ub.edu.controller.Controller : controller
+  ub.edu.view.EscenaAllotjaments -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaLogin -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaMain -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaRegister -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaReservarAllotjament -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaRutaDetalls -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaTramDetalls -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaTramEtapaDetalls -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaTramTrackPdPDetalls -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaValorarPuntDePas -up-|> ub.edu.view.Escena
+  ub.edu.view.EscenaValorarRuta -up-|> ub.edu.view.Escena
+  ub.edu.view.Vista o-- ub.edu.controller.Controller : controller
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane prefHeight="482.0" prefWidth="1089.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ub.edu.view.EscenaMain">
+   <children>
+      <!-- Imagen arriba a la izquierda -->
+      <ImageView fx:id="image_main" layoutX="100.0" layoutY="10.0" />
+
+      <!-- Texto principal de la ventana -->
+      <Text fx:id="textPrincipal" layoutX="250.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#asignarTexto">
+         <font><Font size="30.0" /></font>
+      </Text>
+      <ComboBox fx:id="comboBox_main_grup" layoutX="650.0" layoutY="45.0" promptText="Grups Existents"/>
+
+      <!-- Botton reset_Filtros arriba en medio izquierda -->
+      <Button fx:id="button_izq_resetFiltres_main" layoutX="355.0" layoutY="110.0" mnemonicParsing="false" onAction="#onButtonIzqResetFiltresClick" prefHeight="24.0" prefWidth="157.0" text="Reset Filtres Izq" />
+
+
+      <!-- Texto izquierda -->
+      <Text layoutX="200.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUTAS" textAlignment="CENTER">
+         <font><Font size="25.0" /></font>
+      </Text>
+
+      <!-- Scroll de las Rutas (izquierda)-->
+      <ScrollPane layoutX="25.0" layoutY="139.0" prefHeight="295.0" prefWidth="490.0">
+        <content>
+          <AnchorPane fx:id="rutes_pane" minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="470.0">
+             <children>
+                <Button fx:id="ruta_btn" layoutX="11.0" layoutY="14.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="460.0" text="Rutes" />
+             </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+
+      <!-- Texto de la derecha-->
+      <Text layoutX="650.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Top 5 (TODO)" textAlignment="CENTER">
+         <font><Font size="25.0" /></font>
+      </Text>
+
+      <!-- Botton reset_Filtros arriba en derecha -->
+      <Button fx:id="button_der_resetFiltres_main" layoutX="900.0" layoutY="110.0" mnemonicParsing="false" onAction="#onButtonDerResetFiltresClick" prefHeight="24.0" prefWidth="157.0" text="Reset Filtres Der" />
+
+
+      <!-- Scroll de la derecha-->
+      <ScrollPane hbarPolicy="NEVER" layoutX="550.0" layoutY="139.0" prefHeight="295.0" prefWidth="510.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="500.0">
+               <children>
+                  <TableView fx:id="tableTop10Valorades" prefHeight="295.0" prefWidth="500.0">
+                     <columns>
+                        <TableColumn fx:id="nomColumn" prefWidth="400" text="Nom" />
+                        <TableColumn fx:id="valueColumn" prefWidth="100" text="Value" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+
+      <!--ComboBox de abajo izquierda-->
+      <ComboBox fx:id="comboBox_main_comarca"  layoutX="25.0" layoutY="444.0" promptText="Filtrar per Comarca"/>
+      <ComboBox fx:id="comboBox_main_localitat"  layoutX="200.0" layoutY="444.0" promptText="Filtrar per Localitat"/>
+
+      <!-- Botones de Criterios abajo derecha -->
+      <Button fx:id="button1_abajo_main" layoutX="550.0" layoutY="444.0" mnemonicParsing="false" onAction="#onButton1Click" prefHeight="24.0" prefWidth="157.0" text="Criteri1" />
+      <Button fx:id="button2_abajo_main" layoutX="730.0" layoutY="444.0" mnemonicParsing="false" onAction="#onButton2Click" prefHeight="24.0" prefWidth="157.0" text="Criteri2" />
+      <Button fx:id="button3_abajo_main" layoutX="905.0" layoutY="444.0" mnemonicParsing="false" onAction="#onButton3Click" prefHeight="24.0" prefWidth="157.0" text="Criteri3" />
+
+   </children>
+</AnchorPane>

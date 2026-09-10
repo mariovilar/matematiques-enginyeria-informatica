@@ -1,0 +1,14 @@
+-- SELECT owner_id as OwnerId, SUM(rent) AS TotalRent FROM property4rent GROUP BY owner_id;
+-- SELECT branch_id AS branchid, ROUND(SUM(salary),2) AS TotalSalary, COUNT(DISTINCT staff_id) AS TotalWorkers FROM staff GROUP BY branch_id;
+-- SELECT branch_id AS branchid, GROUP_CONCAT(" '", lname, "'") AS Employees, MIN(salary) AS MinSalary FROM staff GROUP BY branch_id HAVING MinSalary >= 10000;
+-- SELECT owner_id as ownerid, SUM(rent) as sumRents, GROUP_CONCAT(DISTINCT " '", city, "'") AS Cities FROM property4rent GROUP BY owner_id HAVING sumRents > 400;
+-- SELECT * FROM property4rent WHERE property_id NOT IN (SELECT property_id FROM property4rent WHERE city="Glasgow");
+-- SELECT * FROM property4rent WHERE staff_id IN (SELECT staff_id FROM staff WHERE branch_id IN (SELECT branch_id FROM branch WHERE city="Glasgow"));
+-- SELECT fname,lname,position,ROUND(salary-(SELECT AVG(salary) FROM staff), 2) AS diffAvgSalary FROM staff WHERE salary > (SELECT AVG(salary) FROM staff);
+-- SELECT * FROM staff  WHERE salary > ALL (SELECT salary FROM staff WHERE branch_id IN  (SELECT branch_id FROM branch WHERE city="Glasgow"));
+-- START TRANSACTION; DELETE FROM branch WHERE branch_id = 'B005'; SELECT * FROM branch; ROLLBACK;
+-- SELECT staff_id, position, salary, branch_id FROM staff;
+-- CREATE VIEW compStaff AS SELECT staff_id, position, salary, branch_id FROM staff; SELECT * FROM compStaff;
+-- DROP VIEW compStaff;
+-- SELECT * FROM property4rent;
+

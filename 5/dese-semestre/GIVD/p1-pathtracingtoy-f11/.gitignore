@@ -1,0 +1,41 @@
+# 📂 Omet la carpeta de compilació
+build/
+Build/
+out/
+
+# 🔹 Fitxers de CMake generats automàticament
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# 🔹 Binàris i objectes de compilació
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.exe
+
+# 🔹 Fitxers de depuració
+*.log
+*.pch
+*.pdb
+*.tmp
+*.swp
+*.swo
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.user
+
+# 🔹 Fitxers d'editor de codi
+.vscode/
+.idea/
+*.iml
+
+# 🔹 Fitxers de sistema operatiu
+.DS_Store
+Thumbs.db

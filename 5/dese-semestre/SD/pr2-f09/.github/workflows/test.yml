@@ -1,0 +1,102 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+      - '!badges'
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+env:
+  DB_ENGINE: postgres
+  DB_USER: db_user
+  DB_HOST: localhost
+  DB_PASSWORD: db_user_pass
+  DB_NAME: ub_sd_p2
+  ADMIN_USER: admin
+  ADMIN_PASSWORD: admin_pass
+  APPLICATION_NAME: ub_sd_p2
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    # Service containers to run with `runner-job`
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: db_user_pass
+          POSTGRES_USER: db_user
+          POSTGRES_DB: ub_sd_p2
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps tcp port 5432 on service container to the host
+          - 5432:5432
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - uses: Gr1N/setup-poetry@v8
+      - run: poetry --version
+      - name: Install dependencies
+        run: |
+          cd backend          
+          poetry install --all-extras
+      - name: Lint
+        id: lint
+        run: |
+          cd backend
+          poetry run pylint --exit-zero --output-format=text --max-line-length=120 battleship | tee /tmp/pylint.txt
+          sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' /tmp/pylint.txt > /tmp/pylint.score
+          echo "score=$(cat /tmp/pylint.score)" >> $GITHUB_OUTPUT
+          echo "# Code Quality" >> $GITHUB_STEP_SUMMARY
+          echo "## Linting" >> $GITHUB_STEP_SUMMARY
+          echo "$(cat /tmp/pylint.txt)" >> $GITHUB_STEP_SUMMARY
+      - name: Create lint badge
+        uses: emibcn/badge-action@v2.0.3
+        continue-on-error: true
+        with:
+          label: 'pylint'
+          status: ${{ steps.lint.outputs.score }}
+          color: 'blue,555,daf'
+          path: '.github/badges/pylint.svg'
+      - name: Run tests
+        env:
+          PROJECT_NAME: env.APPLICATION_NAME
+          FIRST_SUPERUSER: env.ADMIN_USER
+          FIRST_SUPERUSER_PASSWORD: env.ADMIN_PASSWORD
+        run: |
+          cd backend
+          poetry run coverage run manage.py test          
+          poetry run coverage html
+          echo "## Coverage" >> $GITHUB_STEP_SUMMARY
+          echo "$(poetry run coverage report --format=markdown -m)" >> $GITHUB_STEP_SUMMARY
+      - name: Store coverage files
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-html
+          path: backend/htmlcov
+  # https://github.com/marketplace/actions/alls-green#why
+  alls-green:  # This job does nothing and is only used for the branch protection
+    if: always()
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decide whether the needed jobs succeeded or failed
+        uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}

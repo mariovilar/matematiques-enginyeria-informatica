@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>P3-Globe-GL-Vis: Inspired by WebGL Globe</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://unpkg.com/globe.gl@latest/dist/globe.gl.min.js"></script>
+  </head>
+
+  <body>
+
+    <div id="globeViz"></div>
+
+    <div id="config">
+      <div id="yearTitle">
+        <b>World Population</b>
+      </div>
+
+      <div id="yearList">
+        <span id="1990" class="year">1990</span>
+        <span id="1995" class="year">1995</span>
+        <span id="2000" class="year">2000</span>
+      </div>
+
+      <div id="visTitle">
+        <b>Method</b>
+      </div>
+      
+      <div id="visList">
+        <span id="points" class="vis">Points</span>
+        <span id="paths" class="vis">Paths</span>
+        <span id="heatmap" class="vis">Heatmap</span>
+      </div>
+
+      <div id="legendTitle">
+        <b>Population Weight</b>
+      </div>
+
+      <div id="legend">
+        <div id="legendContainer">
+          <canvas id="legendCanvas" width="200" height="20"></canvas>
+          <div id="legendRange"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { basicShaders, parsePointsData, parsePathsData, parseHeatmapData, getDataFetch, formatShort } from './util.js';
+      import * as THREE from 'https://unpkg.com/three/build/three.module.js';
+      import { scaleLinear } from 'https://cdn.jsdelivr.net/npm/d3-scale@latest/+esm';
+      import { csvParse } from 'https://cdn.jsdelivr.net/npm/d3-dsv@latest/+esm';
+      import { scaleSequentialSqrt } from 'https://cdn.jsdelivr.net/npm/d3-scale@latest/+esm';
+      import { interpolateYlOrRd } from 'https://cdn.jsdelivr.net/npm/d3-scale-chromatic@latest/+esm';
+      import { scaleOrdinal } from 'https://cdn.jsdelivr.net/npm/d3-scale@latest/+esm';
+      import { schemeCategory10 } from 'https://cdn.jsdelivr.net/npm/d3-scale-chromatic@latest/+esm';
+      import { transparentize } from 'https://cdn.skypack.dev/polished';
+      import { scaleSequential } from 'https://cdn.jsdelivr.net/npm/d3-scale@latest/+esm';
+      import { interpolateRainbow } from 'https://cdn.jsdelivr.net/npm/d3-scale-chromatic@latest/+esm';
+
+      // Create new world
+      const world = new Globe(document.getElementById('globeViz'));
+
+      // Read the population data using the basic data parser
+      let dataObject = await getDataFetch('./datasets/population909500.json', parsePointsData);
+      let dataObjectSubmarines = await getDataFetch('./datasets/cable-geo.json', parsePathsData);
+      let dataObjectVolcanoes = await getDataFetch('./datasets/world_volcanoes.json', parseHeatmapData);
+      console.log(dataObjectVolcanoes);
+
+      function updateLegend(method, scale, minWeight, maxWeight) {
+        const midWeight = (minWeight + maxWeight) / 2;
+        const legendRangeContainer = document.getElementById('legendRange');
+        legendRangeContainer.innerHTML = `
+          <div id="legendLabels" style="display: flex; justify-content: space-between; width: 100%;">
+            <span style="text-align:left;">${formatShort(minWeight)}</span>
+            <span style="text-align:center;">${formatShort(midWeight)}</span>
+            <span style="text-align:right;">${formatShort(maxWeight)}</span>
+          </div>
+        `;
+        if (method === 'points') {
+          document.getElementById('legendTitle').innerHTML = `<b>Population Weight</b>`;
+        }
+
+        const canvas = document.getElementById('legendCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Make canvas responsive
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+
+        // Create gradient
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+        const steps = 10;
+        for (let i = 0; i <= steps; i++) {
+          const t = i / steps;
+          gradient.addColorStop(t, scale(t * (scale.domain()[1] - scale.domain()[0]) + scale.domain()[0]));
+        }
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+
+      // Visual Mapping of the data by the selected year and method
+      function mappingSelectedData(year, method) 
+      {
+        // Clear the previous data
+        world.pointsData([]);
+        world.pathsData([]); // Add clearing for pathsData
+        world.heatmapsData([]); // Add clearing for heatmapData
+
+        // Get UI elements for legend and year list
+        const legendElement = document.getElementById('legend');
+        const legendTitleElement = document.getElementById('legendTitle');
+        const yearListElement = document.getElementById('yearList');
+
+        if ( method === 'points' ) {
+          document.getElementById('yearTitle').innerHTML = `<b>World Population ${year}</b>`;
+          if (legendElement) legendElement.style.display = 'block';
+          if (legendTitleElement) legendTitleElement.style.display = 'block';
+          if (yearListElement) yearListElement.style.display = 'block';
+          
+          // Create a scale colors for the points
+          if (!year) year = '1990';
+          const allWeights = dataObject[year].map(d => d.population);
+          const minWeight = Math.min(...allWeights);
+          const maxWeight = Math.max(...allWeights);
+
+          // Example of a color scale for the points
+          const weightColor = scaleSequential(interpolateRainbow)
+            .domain([minWeight, maxWeight])
+            .clamp(false);
+          
+          // Example of a color scale for the points
+          const catColor = scaleOrdinal(schemeCategory10.map(col => transparentize(0.2, col)));
+        
+          // Define the tooltip message
+          const getTooltip = d => `
+            <div style="text-align: center">
+              <div>Population: <em>${d.population}</em>m</div>
+            </div>
+          `;
+
+          // Configure the world globe 
+          world
+            .pointAltitude((d) => (d.population - minWeight)/(maxWeight - minWeight))
+            .pointColor(d => weightColor(d.population))
+            .pointRadius(0.2)
+            .pointLabel(getTooltip)
+            .labelLat('lat')
+            .labelLng('lng');
+
+          // Set the texture of the globe
+          setTexture('./resources/earth-blue-marble.jpg');
+          
+          // Set the data by year
+          world.pointsData(dataObject[year]);
+
+          // Set the legend 
+          updateLegend(method, weightColor, minWeight, maxWeight);
+        } 
+
+        // TODO: Afegiu altres mètodes de visualització
+        else if ( method === 'paths' ) {
+          document.getElementById('yearTitle').innerHTML = `<b>Submarine Cables</b>`;
+          if (legendElement) legendElement.style.display = 'none';
+          if (legendTitleElement) legendTitleElement.style.display = 'none';
+          if (yearListElement) yearListElement.style.display = 'none';
+          
+          // Configure the world globe for submarine cable paths
+          world
+            .pathsData(dataObjectSubmarines)
+            .pathPoints('coords')
+            .pathPointLat(p => p[1])
+            .pathPointLng(p => p[0])
+            .pathColor(path => path.properties.color)
+            .pathLabel(path => path.properties.name + " (" + path.properties.length_km + " kms)")
+            .pathDashLength(0.1)
+            .pathDashGap(0.008)
+            .pathDashAnimateTime(12000);
+          
+          // Set the texture of the globe
+          setTexture('./resources/earth-dark.jpg');
+        }
+        else if ( method === 'heatmap' ) {
+
+          document.getElementById('yearTitle').innerHTML = `<b>Volcano Heatmap (AVÍS: MOLT LENT!!!)</b>`;
+          if (legendElement) legendElement.style.display = 'none';
+          if (legendTitleElement) legendTitleElement.style.display = 'none';
+          if (yearListElement) yearListElement.style.display = 'none';
+
+          world
+            .heatmapsData([dataObjectVolcanoes])
+            .heatmapPointLat('lat')
+            .heatmapPointLng('lon')
+            .heatmapPointWeight(d => d.elevation * 5e-5)
+            .heatmapTopAltitude(0.2)
+            .heatmapBandwidth(1.35)
+            .heatmapColorSaturation(3.2)
+            .enablePointerInteraction(false);
+
+          // Set the texture of the globe
+          setTexture('./resources/earth-blue-marble.jpg');
+        }
+      }
+
+      // Set the data by year
+      async function handleYearHover(year) 
+      {
+        document.querySelectorAll('.year').forEach((el) => {
+          if (el.id !== year) {
+            el.classList.remove('active');
+          }
+        });
+        document.getElementById(year).classList.add('active');
+        // Take the active method, if none is active then use points by default
+        let methodElement = document.querySelector('.vis.active');
+        const method = methodElement ? methodElement.id : 'points';
+        document.getElementById('yearTitle').innerHTML = `<b>World Population ${year}</b>`;
+        mappingSelectedData(year, method);
+      }
+
+      // Set the method of visualization
+      async function handleVisHover(method) 
+      {
+        document.querySelectorAll('.vis').forEach((el) => {
+          if (el.id !== method) {
+            el.classList.remove('active');
+          }
+        });
+        document.getElementById(method).classList.add('active');
+        const yearElement = document.querySelector('.year.active');
+        const year = yearElement ? yearElement.id : null;
+        document.getElementById('visTitle').innerHTML = `<b>Method ${method}</b>`;
+        mappingSelectedData(year, method);
+      }
+
+      // Set the initial year to 1990
+      handleYearHover('1990');
+      // Set the initial method to points
+      handleVisHover('points');
+
+      // Add event listeners for the year spans
+      document.getElementById('1990').addEventListener('mouseover', () => handleYearHover('1990'));
+      document.getElementById('1995').addEventListener('mouseover', () => handleYearHover('1995'));
+      document.getElementById('2000').addEventListener('mouseover', () => handleYearHover('2000'));
+
+      // Add event listeners for the visualization spans
+      document.getElementById('points').addEventListener('mouseover', () => handleVisHover('points'));
+      document.getElementById('paths').addEventListener('mouseover', () => handleVisHover('paths'));
+      document.getElementById('heatmap').addEventListener('mouseover', () => handleVisHover('heatmap'));
+
+      // Set the world texture and start the animation
+      function setTexture(filepath) {
+        Promise.all([
+        new THREE.TextureLoader().loadAsync(filepath)
+        ]).then(([texture]) => {
+          const material = new THREE.ShaderMaterial({
+            uniforms: {
+              textureMap: { value: texture },
+            },
+            vertexShader: basicShaders.vertexShader,
+            fragmentShader: basicShaders.fragmentShader
+          });
+          world.globeMaterial(material);
+        });
+      }
+      
+      // Set the globe properties (by default)
+      setTexture('./resources/earth-blue-marble.jpg');
+
+      // Add auto-rotation
+      // world.controls().autoRotate = true;
+      // world.controls().autoRotateSpeed = 0.6;
+
+      // Kick-off renderer
+      requestAnimationFrame(() =>
+        (function animate() {
+          requestAnimationFrame(animate);
+        })()
+      );
+    </script>
+  </body>
+</html>

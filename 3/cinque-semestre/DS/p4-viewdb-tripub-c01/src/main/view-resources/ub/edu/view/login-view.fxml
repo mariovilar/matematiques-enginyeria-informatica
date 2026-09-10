@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="350.0" prefWidth="350.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ub.edu.view.EscenaLogin">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="0.0" />
+    </padding>
+
+    <Text layoutX="150" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TripUB">
+        <font><Font size="35.0" /></font>
+    </Text>
+
+   <AnchorPane id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="250.0">
+       <children>
+
+           <Text layoutX="150" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+               <font><Font size="24.0" /></font>
+           </Text>
+
+           <Text layoutX="20.0" layoutY="80.0" text="Correu electrònic" />
+           <TextField fx:id="login_correu" layoutX="150.0" layoutY="65.0" text="ajaleo@gmail.com"/>
+
+           <Text layoutX="20.0" layoutY="110.0" text="Password" />
+           <PasswordField fx:id="login_pwd" layoutX="150.0" layoutY="95.0" text="ajaleoPassw7"/>
+
+           <Button fx:id="login_btn" styleClass="login_btn" layoutX="150.0" layoutY="145.0" onAction="#onLoginButtonClick" text="Login" />
+           <Button fx:id="cancel_btn" styleClass="login_btn" layoutX="150.0" layoutY="175.0" onAction="#onCancelButtonClick" text="Cancel" />
+
+           <Button fx:id="register_btn" layoutX="200.0" layoutY="145.0" onAction="#onRegisterWindow" text="Crear compte" />
+
+       </children>
+   </AnchorPane>
+</VBox>

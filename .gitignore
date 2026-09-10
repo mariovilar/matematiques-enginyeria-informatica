@@ -1,9 +1,29 @@
 **/nbproject
 **/build
 **/dist
+**/out
+**/target
 **/Makefile
 
 .DS_Store
 .git
 .dep.inc
 .ipynb_checkpoints
+__pycache__/
+*.pyc
+
+# IDE project files
+.idea/
+*.iml
+.vscode/
+
+# compiled artifacts
+*.class
+*.o
+*.exe
+
+# secrets / local env / local databases
+.env
+.env.*
+*.sqlite3
+*.db

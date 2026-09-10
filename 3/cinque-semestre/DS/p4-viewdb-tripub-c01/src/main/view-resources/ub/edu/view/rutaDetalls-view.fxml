@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ub.edu.view.EscenaRutaDetalls">
+   <children>
+      <!-- Titulo principal-->
+      <Text layoutX="180.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ruta" textAlignment="CENTER" wrappingWidth="312.0">
+         <font><Font size="30.0" /></font>
+      </Text>
+
+      <!-- Titulo Nom-->
+      <Text fx:id="nomRuta_text" layoutX="180.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom Ruta" textAlignment="CENTER" wrappingWidth="312.0" >
+         <font><Font size="20.0" /></font>
+      </Text>
+
+      <!-- Data Text -->
+      <Text fx:id="data_text_caracteristiques" layoutX="280.0" layoutY="150.0" strokeWidth="0.0" text="Caracteristiques:" wrappingWidth="312.0" >
+         <font><Font size="15.0" /></font>
+      </Text>
+
+      <!-- Data Text Id -->
+      <Text fx:id="data_text_id" layoutX="30.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id:" wrappingWidth="312.0" />
+
+      <!-- Data Text Nom -->
+      <Text fx:id="data_text_nom" layoutX="30.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom:" wrappingWidth="312.0" />
+
+      <!-- Data Text DataCreacio -->
+      <Text fx:id="data_text_dataCreacio" layoutX="30.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Creacio:" wrappingWidth="312.0" />
+
+      <!-- Data Text DataCreacio -->
+      <Text fx:id="data_text_durada" layoutX="30.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Durada:" wrappingWidth="312.0" />
+
+      <!-- Data Text Cost -->
+      <Text fx:id="data_text_cost" layoutX="30.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" wrappingWidth="312.0" />
+
+      <!-- Data Text Cost -->
+      <Text fx:id="data_text_distancia" layoutX="30.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distancia:" wrappingWidth="312.0" />
+
+      <!-- Data Text Cost -->
+      <Text fx:id="data_text_dificultat" layoutX="30.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dificultat:" wrappingWidth="312.0" />
+
+      <!-- Data Text Cost -->
+      <Text fx:id="data_text_tipusRuta" layoutX="30.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TipusRuta:" wrappingWidth="312.0" />
+
+      <!-- Data Text Descripcio -->
+      <Text fx:id="data_text_descripcio" layoutX="350.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcio:" wrappingWidth="312.0" />
+
+      <!-- Data Text Origen -->
+      <Text fx:id="data_text_origen" layoutX="30.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orígen:" wrappingWidth="312.0">
+         <font> <Font size="15.0" /> </font>
+      </Text>
+
+      <!-- button origen -->
+      <Button fx:id="origen_btn" layoutX="100.0" layoutY="360.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" text="Localitzacio Origen" textAlignment="LEFT" />
+
+
+      <!-- Data Text Desti -->
+      <Text fx:id="data_text_desti" layoutX="30.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destí:" wrappingWidth="312.0">
+         <font> <Font size="15.0" /> </font>
+      </Text>
+
+      <!-- button origen -->
+      <Button fx:id="desti_btn" layoutX="100.0" layoutY="410.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" text="Localitzacio Desti" textAlignment="LEFT" />
+
+      <!-- button accedir al trams -->
+      <Button fx:id="valorar_btn" layoutX="400.0" layoutY="360.0" onAction="#onBtnValorarClick" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" text="Valorar" />
+
+      <!-- button accedir al trams -->
+      <Button fx:id="trams_btn" layoutX="400.0" layoutY="410.0" onAction="#onBtntramsDetallsClick" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" text="Veure Trams" />
+   </children>
+</AnchorPane>

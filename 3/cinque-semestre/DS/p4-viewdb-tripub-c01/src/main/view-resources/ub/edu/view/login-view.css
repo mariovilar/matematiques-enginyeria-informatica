@@ -1,0 +1,12 @@
+.tab-pane *.tab-header-background {
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+#anchorpane {
+    -fx-border-color: gray;
+    -fx-border-radius: 10px;
+}
+
+.login_btn {
+    --fxbackground-color: blue;
+}

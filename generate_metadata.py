@@ -62,7 +62,12 @@ def extract_metadata_from_pdf(path):
                     val = re.sub(r"(?:Professor|Docent)[:\s]+", "", line, flags=re.IGNORECASE).strip()
                     if not val and i + 1 < len(lines): # Check next line if empty
                         val = lines[i+1]
-                    if val: meta["professor"] = clean_text(val)
+                    if val:
+                        val = clean_text(val)
+                        # Strip trailing student/staff ID numbers like "Nom(20392643)"
+                        if re.search(r"\(\d{4,}\)|\d{4,}", val):
+                            val = re.sub(r"\(?\d{4,}\)?", "", val).strip()
+                        meta["professor"] = val or "Unknown"
 
                 # Field (Grau)
                 field_match = re.search(REGEX_FIELD, line, re.IGNORECASE)

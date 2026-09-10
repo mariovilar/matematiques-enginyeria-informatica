@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox alignment="CENTER" prefHeight="350.0" prefWidth="475.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ub.edu.view.EscenaValorarRuta">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <AnchorPane id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="250.0">
+       <children>
+           <!-- Title 1 -->
+           <Text layoutX="70" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valorar Ruta">
+               <font><Font size="35.0" /></font>
+           </Text>
+
+           <!-- Title 2 -->
+           <Text layoutX="120" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valorar">
+               <font><Font size="24.0" /></font>
+           </Text>
+
+           <!-- Selectores patra habilitar o deshabilitar llas opciones -->
+           <HBox layoutX="30.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_G1_Text1" text="Via Likes">
+                   <toggleGroup>
+                       <ToggleGroup fx:id="group"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+
+           <HBox layoutX="120.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_G2_Text2" text="Via Opinio">
+                   <toggleGroup>
+                       <fx:reference source="group"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+           <HBox layoutX="320.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_G3_Text3" text="Via Estrelles">
+                   <toggleGroup>
+                       <fx:reference source="group"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+           <!-- Group1 RadioButtons  -->
+           <HBox layoutX="30.0" layoutY="120.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group1_Like" layoutX="40.0" layoutY="60.0" text="Like">
+                   <toggleGroup>
+                       <ToggleGroup fx:id="group1"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+           <HBox layoutX="30.0" layoutY="140.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group1_Dislike" text="Dislike">
+                   <toggleGroup>
+                       <fx:reference source="group1"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+
+           <!-- Group2 RadioButtons  -->
+           <HBox layoutX="120.0" layoutY="120.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group2_Text1" text="No la faria mai">
+                   <toggleGroup>
+                       <ToggleGroup fx:id="group2"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+           <HBox layoutX="120.0" layoutY="140.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group2_Text2" text="La faré si no hi ha mes remei">
+                   <toggleGroup>
+                       <fx:reference source="group2"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+           <HBox layoutX="120.0" layoutY="160.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group2_Text3" text="Potser la faria">
+                   <toggleGroup>
+                       <fx:reference source="group2"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+           <HBox layoutX="120.0" layoutY="180.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group2_Text4" text="M'encantaria fer-la">
+                   <toggleGroup>
+                       <fx:reference source="group2"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+
+           <!-- Group3 RadioButtons  -->
+           <HBox layoutX="320.0" layoutY="120.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group3_Text1" text="1">
+                   <toggleGroup>
+                       <ToggleGroup fx:id="group3"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+           <HBox layoutX="320.0" layoutY="140.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group3_Text2" text="2">
+                   <toggleGroup>
+                       <fx:reference source="group3"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+           <HBox layoutX="320.0" layoutY="160.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group3_Text3" text="3">
+                   <toggleGroup>
+                       <fx:reference source="group3"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+           <HBox layoutX="320.0" layoutY="180.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group3_Text4" text="4">
+                   <toggleGroup>
+                       <fx:reference source="group3"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+           <HBox layoutX="320.0" layoutY="200.0" nodeOrientation="LEFT_TO_RIGHT">
+               <RadioButton fx:id="radioButton_Group3_Text5" text="5">
+                   <toggleGroup>
+                       <fx:reference source="group3"/>
+                   </toggleGroup>
+               </RadioButton>
+           </HBox>
+
+           <!-- Button Sumbit Valoration  -->
+           <Button fx:id="button_valorar" layoutX="120.0" layoutY="250.0" mnemonicParsing="false" onAction="#onButtonValorarClick" prefHeight="24.0" prefWidth="70.0" text="Valorar" />
+
+           <!-- Button Cancel Valoration  -->
+           <Button fx:id="button_cancel" layoutX="220.0" layoutY="250.0" mnemonicParsing="false" onAction="#onButtonCancelarClick" prefHeight="24.0" prefWidth="70.0" text="Cancelar" />
+
+
+       </children>
+   </AnchorPane>
+</VBox>

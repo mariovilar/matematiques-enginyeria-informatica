@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<VBox alignment="CENTER" prefHeight="450.0" prefWidth="450.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ub.edu.view.EscenaRegister">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="0.0" />
+    </padding>
+   <AnchorPane id="anchorpane" minHeight="280.0" minWidth="280.0" prefHeight="300.0" prefWidth="300.0">
+      <children>
+          <Text layoutX="150" layoutY="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TripUB">
+              <font><Font size="35.0" /></font>
+          </Text>
+
+          <Text layoutX="150" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registre">
+              <font><Font size="24.0" /></font>
+          </Text>
+
+          <Text layoutX="20.0" layoutY="70.0" text="Correu electrònicn (*)" />
+          <TextField fx:id="registre_correu" layoutX="150.0" layoutY="55.0" />
+
+          <Text layoutX="20.0" layoutY="100.0" text="Nom" />
+          <TextField fx:id="registre_nom" layoutX="150.0" layoutY="85.0" />
+
+          <Text layoutX="20.0" layoutY="130.0" text="Cognoms" />
+          <TextField fx:id="registre_cognoms" layoutX="150.0" layoutY="115.0" />
+
+          <Text layoutX="20.0" layoutY="160.0" text="Dni" />
+          <TextField fx:id="registre_dni" layoutX="150.0" layoutY="145.0" />
+
+          <Text layoutX="20.0" layoutY="190.0" text="Password (*)" />
+          <PasswordField fx:id="registre_pwd" layoutX="150.0" layoutY="175.0" />
+
+          <Text layoutX="20.0" layoutY="220.0" text="Repeteix la Password (*)" />
+          <PasswordField fx:id="registre_pwd_repeat" layoutX="150.0" layoutY="205.0" />
+
+
+          <!-- empieza en izquierda 150 y acaba en derecha 300-->
+          <Text layoutX="20.0" layoutY="250.0" text="Grup" />
+
+          <!-- Selectores patra habilitar o deshabilitar llas opciones -->
+          <HBox layoutX="80.0" layoutY="235.0" nodeOrientation="LEFT_TO_RIGHT">
+              <RadioButton fx:id="radioButton_Group1_Text1" text="Afegir a un Grup Existent">
+                  <toggleGroup>
+                      <ToggleGroup fx:id="group"/>
+                  </toggleGroup>
+              </RadioButton>
+          </HBox>
+          <HBox layoutX="250.0" layoutY="235.0" nodeOrientation="LEFT_TO_RIGHT">
+              <RadioButton fx:id="radioButton_Group1_Text2" text="Crear un nou Grup">
+                  <toggleGroup>
+                      <fx:reference source="group"/>
+                  </toggleGroup>
+              </RadioButton>
+          </HBox>
+          <ComboBox fx:id="comboBox_register_grup"  layoutX="80.0" layoutY="255.0" promptText="Grups Existents"/>
+          <TextField fx:id="registre_grup" layoutX="250.0" layoutY="255.0" maxWidth="100.0" promptText="Crear Grup"/>
+
+        <Button fx:id="registre_btn" layoutX="150.0" layoutY="300.0" onAction="#onRegistreButtonClick" text="Registre" />
+        <Button fx:id="tornarLogin_reg_btn" layoutX="220.0" layoutY="300.0" onAction="#onTornarLoginButtonClick" text="Tornar a Login" />
+      </children>
+   </AnchorPane>
+</VBox>

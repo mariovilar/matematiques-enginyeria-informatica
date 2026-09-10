@@ -1,0 +1,13 @@
+applications:
+- name: Server
+  path: Server/target/server-1.0-SNAPSHOT.jar
+  memory: 256m
+  env:
+    JAVA_OPTS: '-XX:ReservedCodeCacheSize=32M -XX:MaxDirectMemorySize=32M'
+    JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {stack_threads: 30}]'
+- name: Client
+  path: Client/target/client-1.0-SNAPSHOT.jar
+  memory: 256m
+  env:
+    JAVA_OPTS: '-XX:ReservedCodeCacheSize=32M -XX:MaxDirectMemorySize=32M'
+    JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {stack_threads: 30}]'

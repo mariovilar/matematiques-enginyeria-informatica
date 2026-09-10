@@ -1,0 +1,799 @@
+-- Esto es un comentario.
+-- TODAS las instrucciones sirven tanto para SQL como SQLITE excepto en el caso que no haya ningun campo aparte de un ID autoincremental.
+-- Es decir, la única excepción está para TripUB. 
+
+-- Para SQLITE hacer:
+INSERT INTO TripUB DEFAULT VALUES;
+SELECT * FROM TripUB;
+
+-- Para SQL hacer:
+-- INSERT INTO TripUB VALUES ();
+-- SELECT * FROM TripUB;
+
+
+INSERT INTO Grup (nom) VALUES ("Gryffindor");
+INSERT INTO Grup (nom) VALUES ("Hufflepuff");
+INSERT INTO Grup (nom) VALUES ("Ravenclaw");
+INSERT INTO Grup (nom) VALUES ("Slytherin");
+SELECT * FROM Grup;
+
+
+INSERT INTO Persona (correu,nom,cognom,dni,password,id_tripUB) VALUES("ajaleo@gmail.com","Antoni","Jaleo","11111111","ajaleoPassw7",1);
+INSERT INTO Persona (correu,nom,cognom,dni,password,id_tripUB) VALUES("dtomacal@yahoo.cat","Daniel","Tomacal","22222222","Qwertyft5",1);
+INSERT INTO Persona (correu,nom,cognom,dni,password,id_tripUB) VALUES("heisenberg@gmail.com","Hudini","Eisenberg","33333333","the1whoknocks",1);
+INSERT INTO Persona (correu,nom,cognom,dni,password,id_tripUB) VALUES("rick@gmail.com","Rick","Daniels","44444444","wabalabadapdap22",1);
+INSERT INTO Persona (correu,nom,cognom,dni,password,id_tripUB) VALUES("nietolopez10@gmail.com","Nieto","Lopez","55555555","pekFD91m2a",1);
+INSERT INTO Persona (correu,nom,cognom,dni,password,id_tripUB) VALUES("nancyarg10@yahoo.com","Nancy","Yarg","66666666","contra10LOadc",1);
+INSERT INTO Persona (correu,nom,cognom,dni,password,id_tripUB) VALUES("CapitaCC@gmail.com","Capita","Command","77777777","Alistar10",1);
+INSERT INTO Persona (correu,nom,cognom,dni,password,id_tripUB) VALUES("nauin2@gmail.com","Navi","Uingels","88888888","kaynJGL20",1);
+INSERT INTO Persona (correu,nom,cognom,dni,password,id_tripUB) VALUES("juancarlos999@gmail.com","Juan","Carlos","99999999","staIamsA12",1);
+INSERT INTO Persona (correu,nom,cognom,dni,password,id_tripUB) VALUES("judit121@gmail.com","Judit","Garcia","00000000","Ordinador1",1);
+SELECT * FROM Persona;
+
+
+INSERT INTO Grup_FormatPer_Persones (correu_persona,id_grup) VALUES ("ajaleo@gmail.com",1);
+INSERT INTO Grup_FormatPer_Persones (correu_persona,id_grup) VALUES ("heisenberg@gmail.com",1);
+INSERT INTO Grup_FormatPer_Persones (correu_persona,id_grup) VALUES ("rick@gmail.com",1);
+INSERT INTO Grup_FormatPer_Persones (correu_persona,id_grup) VALUES ("nietolopez10@gmail.com",1);
+INSERT INTO Grup_FormatPer_Persones (correu_persona,id_grup) VALUES ("dtomacal@yahoo.cat",2);
+INSERT INTO Grup_FormatPer_Persones (correu_persona,id_grup) VALUES ("juancarlos999@gmail.com",3);
+INSERT INTO Grup_FormatPer_Persones (correu_persona,id_grup) VALUES ("judit121@gmail.com",4);
+SELECT * FROM Grup_FormatPer_Persones;
+
+
+INSERT INTO Comarca (nom) VALUES("Alt Empordà");
+INSERT INTO Comarca (nom) VALUES("El Pirineo de Navarra");
+INSERT INTO Comarca (nom) VALUES("La Jacetania");
+INSERT INTO Comarca (nom) VALUES("Cerdanya");
+INSERT INTO Comarca (nom) VALUES("Ripollès");
+INSERT INTO Comarca (nom) VALUES("Garrotxa");
+INSERT INTO Comarca (nom) VALUES("Terra Alta");
+INSERT INTO Comarca (nom) VALUES("Ribera d'Ebre");
+INSERT INTO Comarca (nom) VALUES("Montsià");
+INSERT INTO Comarca (nom) VALUES("Baix Ebre");
+INSERT INTO Comarca (nom) VALUES("La Selva");
+INSERT INTO Comarca (nom) VALUES("Baix Empordà");
+INSERT INTO Comarca (nom) VALUES("Osona");
+INSERT INTO Comarca (nom) VALUES("Gironès");
+SELECT * FROM Comarca;
+
+
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("1.0. Refugio del Rebost", 1630.43, 42.287, 1.885, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("1.1. Refugio niu de l'aguila", 2507.97, 42.319, 1.893, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("1.1.1. Coll de Jou", 2048.84, 42.310, 1.8644, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("1.2. Penyes Altes de Moinxerol", 2271.25, 42.306, 1.8424, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("1.2.1. Coll del Monxerol", 1542.04, 42.319, 1.811, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("1.3. Moinxerol", 2072.10, 42.299, 1.822, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("1.3.1. Collet del Moinxerol", 1542.04, 42.32, 1.8211, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("2.0. Refugi del Serrat de les Esposes", 1510.36, 42.33, 1.828, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("2.1 Refugi cortals de l'ingla", 1827.84, 42.3146, 1.799, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("2.1.1. Coll del Pendís", 1651.61, 42.300, 1.7833, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("2.1.2. Coll del Vimboca", 1633.16, 42.302, 1.775, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("2.2.3. Coll de la Moixa", 1773.257, 42.3097, 1.772, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("2.2.4. Pas del Bou", 1875.228, 42.298, 1.746, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("3.0. Refugio Prat Aguiló", 1998.207, 42.297, 1.714, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("3.1. Pas del Gosolans", 2443.14, 42.285, 1.713, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("3.1.1. Coll de les Bassotes", 1819.55, 42.261, 1.692, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("3.1.2. El collet", 1963.31, 42.2487, 1.6792, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("3.2. Refugio Lluis Estasen", 1673.555, 42.2452, 1.7162, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("4.0. Refugi del Gresolet", 1257.951, 42.2587, 1.7247, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("4.0.1. Coll de Bauma", 1249.68261, 42.27763, 1.792803, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("4.0.2. Coll de la Bena", 1249.682264, 42.27763, 1.792803, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("4.0.3. Font", 1171.5613, 42.26728, 1.7775, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("4.0.4. Font Nostra", 1061.344, 42.2698, 1.7872, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("5.0. Refugio Sant Jordi", 1558.39, 42.2926, 1.8073, 1);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("5.0.1. Coll d'Escriu", 1251.969, 42.2921, 1.8446, 1);
+
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 0. V1-V2 Albergue Alterpea", 753.047, 42.83, -0.946, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 1.0. V1-V2 Campamento Asolaze", 938.258, 42.90, -0.881, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 1.1. V1 Txamantxoia", 1820.576, 42.903, -0.8154, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 1.1. V2 Iturruburua - Belabarce", 1069.95, 42.8758, -0.8548, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 2.0. V1-V2 Refugio de Linza", 1345.48, 42.898, -0.7997, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 2.1. V1 Mesa de los tres reyes hiru", 2364.84, 42.9191, -0.72594, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 2.1. V2 Petrechema - Pico de Ansabere", 2289.345, 42.902, -0.7329, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 3.0. V1-V2 Centro de Laberouat", 1431.680, 42.950, -0.6659, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 3.1. V1 Pic d'Anie", 2450.242, 42.9438, -0.72086, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 3.1. V2 && 3.2. V1 Pico de Arlas", 1977.1186, 42.9680, -0.7517, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 4.0. V1-V2 La Pierre San Martin", 1625.0198, 42.9782, -0.74664, 2);
+INSERT INTO Localitat  (nom, altitud, latitud, longitud, id_comarca)
+VALUES ("R2 - 4.1. V1 Collardo de Arrakogoiti - Cima Lakora", 1839.0977, 42.9557, -0.83698, 2);
+SELECT * FROM Localitat ;
+
+
+INSERT INTO Ruta (nom,dataCreacio,durada,descripcio,cost,distancia,dificultat,tipusRuta,id_lloc_origen,id_lloc_desti,id_tripUB)
+VALUES("Ruta Circular Alta: Cavalls del Vent en 5 etapes",
+"2021-07-19",
+6,
+"Cavalls del Vent constitueix una de les travesses indispensables 
+per als amants de la muntanya i del senderisme per Catalunya. Aquesta ruta de 84,2 km està ubicada al Parc Natural del Cadí-Moixeró i és circular, 
+essent l'inici i el final al mateix refugi. Això dona peu a que es pugui realitzar en ambdós sentits.",
+NULL,NULL,"Alt","CIRCULAR",1,1,1);
+
+INSERT INTO Ruta (nom,dataCreacio,durada,descripcio,cost,distancia,dificultat,tipusRuta,id_lloc_origen,id_lloc_desti,id_tripUB)
+VALUES("Ruta Circular Alta: Cavalls del Vent en 5 etapes",
+"2021-10-10",
+4,
+"La Ruta de las Golondrinas nace como travesía con forfait en 4 etapas circunvalando un paisaje único en Europa: Larra. 
+Cruzamos Belagua, Linza, Lescun, Bearn y Zuberoa en 4 etapas y más de 5.000 metros de desnivel atravesando el pirineo occidental en etapas de entre 4 y 8 horas. 
+Ascendemos algunas de las cumbres más importantes de esta zona del pirineo: Txamantxoia, Petrechema, Mesa de los tres reyes, Anie, Lakora…",
+NULL,NULL,"Mitjà","CIRCULAR",1,1,1);
+
+INSERT INTO Ruta (nom,dataCreacio,durada,descripcio,cost,distancia,dificultat,tipusRuta,id_lloc_origen,id_lloc_desti,id_tripUB)
+VALUES("De la Cerdanya fins al Mar","2021-07-19",6,"desc_ruta1",NULL,NULL,NULL,NULL,1,2,1);
+INSERT INTO Ruta (nom,dataCreacio,durada,descripcio,cost,distancia,dificultat,tipusRuta,id_lloc_origen,id_lloc_desti,id_tripUB)
+VALUES("Terres de l'Ebre","2021-07-19",6,"desc_ruta2",NULL,NULL,NULL,NULL,1,2,1);
+INSERT INTO Ruta (nom,dataCreacio,durada,descripcio,cost,distancia,dificultat,tipusRuta,id_lloc_origen,id_lloc_desti,id_tripUB)
+VALUES("La Costa Brava","2021-07-19",6,"desc_ruta3",NULL,NULL,NULL,NULL,2,1,1);
+INSERT INTO Ruta (nom,dataCreacio,durada,descripcio,cost,distancia,dificultat,tipusRuta,id_lloc_origen,id_lloc_desti,id_tripUB)
+VALUES("Ribera del Ter","2021-07-19",6,"desc_ruta4",NULL,NULL,NULL,NULL,2,1,1);
+
+SELECT * FROM Ruta;
+
+
+INSERT INTO Persones_Realitza_Ruta (id_ruta, correu_persona)
+VALUES (1,"ajaleo@gmail.com");
+INSERT INTO Persones_Realitza_Ruta (id_ruta, correu_persona)
+VALUES (1,"dtomacal@yahoo.cat");
+INSERT INTO Persones_Realitza_Ruta (id_ruta, correu_persona)
+VALUES (1,"rick@gmail.com");
+INSERT INTO Persones_Realitza_Ruta (id_ruta, correu_persona)
+VALUES (1,"CapitaCC@gmail.com");
+INSERT INTO Persones_Realitza_Ruta (id_ruta, correu_persona)
+VALUES (1,"nauin2@gmail.com");
+
+INSERT INTO Persones_Realitza_Ruta (id_ruta, correu_persona)
+VALUES (2,"juancarlos999@gmail.com");
+INSERT INTO Persones_Realitza_Ruta (id_ruta, correu_persona)
+VALUES (2,"judit121@gmail.com");
+SELECT * FROM Persones_Realitza_Ruta;
+
+
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (1,1);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (2,2);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (2,3);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (3,4);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (3,5);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (3,6);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (4,6);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (4,8);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (4,9);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (4,10);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (5,11);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (5,12);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (5,3);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (6,5);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (6,13);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (6,11);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (6,14);
+INSERT INTO Relacio_Comarca_Ruta (id_ruta,id_comarca) VALUES (6,12);
+SELECT * FROM Relacio_Comarca_Ruta;
+
+
+INSERT INTO Transport (velocitatEstimada, nomTransport) VALUES (30.3,"Fresh Foam 1080");
+INSERT INTO Transport (velocitatEstimada, nomTransport) VALUES (64.0,"Laufmaschine");
+INSERT INTO Transport (velocitatEstimada, nomTransport) VALUES (180.0,"Turtle Van");
+INSERT INTO Transport (velocitatEstimada, nomTransport) VALUES (44.72,"Puma Theseus Pro");
+INSERT INTO Transport (velocitatEstimada, nomTransport) VALUES (100.5,"Derbi Rabasa Panther");
+INSERT INTO Transport (velocitatEstimada, nomTransport) VALUES (209.0,"DeLorean DMC-12");
+SELECT * FROM Transport;
+
+
+INSERT INTO APeu (id_peu) VALUES (1);
+INSERT INTO APeu (id_peu) VALUES (4);
+SELECT * FROM APeu;
+
+
+INSERT INTO Bicicleta (id_bicicleta, model) VALUES (2,"Draisiana");
+INSERT INTO Bicicleta (id_bicicleta, model) VALUES (5,"Derbi Rabasa");
+SELECT * FROM Bicicleta;
+
+
+INSERT INTO Cotxe (id_cotxe,model,tipusCombustible) VALUES (3,"Turtle",true);
+INSERT INTO Cotxe (id_cotxe,model,tipusCombustible) VALUES (6,"Futuro",true);
+SELECT * FROM Cotxe;
+
+
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,4);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,4);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,4);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,4);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,4);
+
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,4);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,4);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,4);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,4);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,4);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (1,1);
+
+
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,3);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+INSERT INTO Tram (id_ruta,id_transport_recomenat) VALUES (2,1);
+SELECT * FROM Tram;
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,1);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,1);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (5,1);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (6,1);
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,2);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,2);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,2);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (5,2);
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,3);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,3);
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,4);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,4);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (5,4);
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,5);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,5);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,5);
+
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,6);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (6,6);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,7);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,8);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,9);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,10);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,11);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,11);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (5,11);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,12);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (6,12);
+
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,13);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,14);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,14);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,15);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,15);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,15);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,16);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (5,16);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,17);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,18);
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,19);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,20);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,20);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,21);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,22);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,22);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,23);
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,24);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,25);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,25);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (5,25);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,26);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,27);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (5,27);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,28);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,28);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,29);
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,30);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,30);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,30);
+
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,31);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,31);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (3,31);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,31);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,32);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,32);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,33);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,33);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,34);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,34);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,35);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,35);
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,36);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,36);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (3,36);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,36);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,37);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,38);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,39);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,40);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,41);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,42);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,43);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,43);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,44);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,45);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,46);
+
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,47);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,47);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,48);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (1,49);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,50);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,51);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,52);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,53);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (2,54);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,54);
+INSERT INTO Transport_PossiblePerAl_Tram (id_transport,id_tram) VALUES (4,55);
+SELECT * FROM Transport_PossiblePerAl_Tram;
+
+
+INSERT INTO Etapa (id_etapa) VALUES (1);
+INSERT INTO Etapa (id_etapa) VALUES (8);
+INSERT INTO Etapa (id_etapa) VALUES (14);
+INSERT INTO Etapa (id_etapa) VALUES (19);
+INSERT INTO Etapa (id_etapa) VALUES (24);
+
+INSERT INTO Etapa (id_etapa) VALUES (26);
+INSERT INTO Etapa (id_etapa) VALUES (27);
+INSERT INTO Etapa (id_etapa) VALUES (30);
+INSERT INTO Etapa (id_etapa) VALUES (33);
+INSERT INTO Etapa (id_etapa) VALUES (36);
+SELECT * FROM Etapa;
+
+
+INSERT INTO Allotjament (nom,preuPerNit,id_etapa) VALUES ("Allotjament Refugi 1", 10.0, 1);
+INSERT INTO Allotjament (nom,preuPerNit,id_etapa) VALUES ("Allotjament Camping 1", 12.99, 8);
+INSERT INTO Allotjament (nom,preuPerNit,id_etapa) VALUES ("Allotjament CasaRural 1", 14.99, 14);
+INSERT INTO Allotjament (nom,preuPerNit,id_etapa) VALUES ("Allotjament Hotel 1", 25.0, 19);
+INSERT INTO Allotjament (nom,preuPerNit,id_etapa) VALUES ("Allotjament Refugi al infern 2", 14.99, 1);
+INSERT INTO Allotjament (nom,preuPerNit,id_etapa) VALUES ("Allotjament Camping Ensangonat 2", 15.0, 8);
+INSERT INTO Allotjament (nom,preuPerNit,id_etapa) VALUES ("Allotjament La Casa del Horrors 2", 17.5, 14);
+INSERT INTO Allotjament (nom,preuPerNit,id_etapa) VALUES ("Allotjament Hotel Krüeger 2", 29.99, 19);
+INSERT INTO Allotjament (nom,preuPerNit,id_etapa) VALUES ("Allotjament La Casa del miedo 3", 20.0, 24);
+INSERT INTO Allotjament (nom,preuPerNit,id_etapa) VALUES ("Allotjament Hotel Tia Maria 3", 27.0, 24);
+SELECT * FROM Allotjament;
+
+
+INSERT INTO Refugi (id_refugi,preuMP) VALUES (1,6.0);
+INSERT INTO Refugi (id_refugi,preuMP) VALUES (5,6.5);
+SELECT * FROM Refugi;
+
+
+INSERT INTO Camping (id_camping) VALUES (2);
+INSERT INTO Camping (id_camping) VALUES (6);
+SELECT * FROM Camping;
+
+
+INSERT INTO CasaRural (id_casaRural,preuEsmorzar) VALUES (3,7.0);
+INSERT INTO CasaRural (id_casaRural,preuEsmorzar) VALUES (7,7.5);
+INSERT INTO CasaRural (id_casaRural,preuEsmorzar) VALUES (9,8.0);
+SELECT * FROM CasaRural;
+
+
+INSERT INTO Hotel (id_hotel,preuEsmorzar,preuMP,preuPC) VALUES (4,4.5,7.0,11.0);
+INSERT INTO Hotel (id_hotel,preuEsmorzar,preuMP,preuPC) VALUES (8,5.5,8.0,12.0);
+INSERT INTO Hotel (id_hotel,preuEsmorzar,preuMP,preuPC) VALUES (10,5.0,7.5,11.5);
+SELECT * FROM Hotel;
+
+
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (1,23.0,NULL,NULL,1,8);
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (2,15.7,NULL,NULL,8,14);
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (3,16.4,NULL,NULL,14,19);
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (4,16.1,NULL,NULL,19,24);
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (5,13.0,NULL,NULL,24,1);
+
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (31,10.0,NULL,NULL,26,27);
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (32,7.4,NULL,NULL,27,30);
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (33,15.8,NULL,NULL,30,33);
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (34,12.1,NULL,NULL,33,36);
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (35,18.5,NULL,NULL,36,27);
+INSERT INTO TramEtapa (id_tramEtapa, kms, tempsEstimat, cost, id_etapa_origen, id_etapa_desti)
+VALUES (36,10.0,NULL,NULL,27,26);
+SELECT * FROM TramEtapa;
+
+
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (1,"1.0. Refugio del Rebost. Muy acojedor");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (2,"1.1. Refugio niu de l'aguila. Vistas magnificas");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (3,"1.1.1. Coll de Jou. Impresionante");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (4,"1.2. Penyes Altes de Moinxerol. Cuidado no te caigas");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (5,"1.2.1. Coll del Monxerol. Da vertigo verlo");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (6,"1.3. Moinxerol. En la cima");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (7,"1.3.1. Collet del Moinxerol. De bajada que vamos");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (8,"2.0. Refugi del Serrat de les Esposes. Merecido descanso");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (9,"2.1 Refugi cortals de l'ingla. Ruta muy bonita");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (10,"2.1.1. Coll del Pendís. Impresionante el horizonte");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (11,"2.1.2. Coll del Vimboca. Las laderas son increibles");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (12,"2.2.3. Coll de la Moixa. Mira esos caminos del fondo");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (13,"2.2.4. Pas del Bou. Veo un antiguo molino");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (14,"3.0. Refugio Prat Aguiló. Atardecer hermoso");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (15,"3.1. Pas del Gosolans. Siguiendo una ruta de la antiguedad");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (16,"3.1.1. Coll de les Bassotes. Mira que empinadas las laderas");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (17,"3.1.2. El collet. Al pie de la montaña");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (18,"3.2. Refugio Lluis Estasen. Mira un lago pequeño");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (19,"4.0. Refugi del Gresolet. La luna se camufla entre los picos");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (20,"4.0.1. Coll de Bauma. Me guardare una foto de las vistas");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (21,"4.0.2. Coll de la Bena. He encontrado un fosil");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (22,"4.0.3. Font. Lagrimas de decepción, el fosil era una piedra");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (23,"4.0.4. Font Nostra. A reponer los liquidos perididos");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (24,"5.0. Refugio Sant Jordi. Las montañas parecen un dragón");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (25,"5.0.1. Coll d'Escriu. Mirando al horizonte");
+
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (26,"R2 - 0. V1-V2 Albergue Alterpea. Una nueva Aventura");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (27,"R2 - 1.0. V1-V2 Campamento Asolaze. Comienza la  marcha");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (28,"R2 - 1.1. V1 Txamantxoia. Cobardes... esto si es un reto");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (29,"R2 - 1.1. V2 Iturruburua - Belabarce. La primera parada bastante tranquilita");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (30,"R2 - 2.0. V1-V2 Refugio de Linza. Merecido descanso");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (31,"R2 - 2.1. V1 Mesa de los tres reyes hiru. ¿Estará excalibur por aquí?");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (32,"R2 - 2.1. V2 Petrechema - Pico de Ansabere. Tengo vértigo, esto está muy alto");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (33,"R2 - 3.0. V1-V2 Centro de Laberouat. Dichosos grillos que no me dejan dormir");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (34,"R2 - 3.1. V1 Pic d'Anie. Ya se de donde se inspiraron... esa montaña parece un oso");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (35,"R2 - 3.1. V2 && 3.2. V1 Pico de Arlas. Yo no veo ningún hada... la leyenda será falsa... Mejor me pongo a jugar al Breath of the Wild");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (36,"R2 - 4.0. V1-V2 La Pierre San Martin. Mejor dejo una lucecita encendida, no vaya a ser que el fantasma de algun minero quiera venir esta noche");
+INSERT INTO PuntDePas (id_puntDePas, highlight) 
+VALUES (37,"R2 - 4.1. V1 Collardo de Arrakogoiti. ¿Qué? ¿Arrako... qué? ... Por el nombre, pensé que estabamos en algún templo Maya o Inca?");
+SELECT * FROM PuntDePas;
+
+
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (6,"02:00:00",8530,877.54,0.0,1,2);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (7,"01:00:00",2680,0.0,459.13,2,3);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (8,"01:00:00",3246,222.41,0.0,3,4);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (9,"01:00:00",2350,0.0,729.21,4,5);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (10,"01:00:00",1330,530.06,0.0,5,6);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (11,"00:30:00",1640,0.0,530.06,6,7);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (12,"01:00:00",2890,0.0,31.68,7,8);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (13,"01:30:00",4160,317.48,0.0,8,9);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (14,"00:30:00",2030,0.0,176.23,9,10);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (15,"00:30:00",1630,0.0,18.45,10,11);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (16,"02:00:00",2853,140.097,0.0,11,12);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (17,"00:30:00",2123,101.971,0.0,12,13);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (18,"01:30:00",3753,122.979,0.0,13,14);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (19,"01:00:00",2753,444.933,0.0,14,15);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (20,"02:00:00",6983,0.0,623.59,15,16);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (21,"00:30:00",2243,143.76,0.0,16,17);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (22,"01:00:00",5843,0.0,289.755,17,18);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (23,"01:00:00",2187,0.0,415.604,18,19);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (24,"01:00:00",2063,0.0,8.26839,19,20);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (25,"01:00:00",2910,0.0,0.0,20,21);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (26,"00:10:00",790,0.0,78.12,21,22);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (27,"02:20:00",5320,0.0,110.2173,22,23);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (28,"01:30:00",4130,497.046,0.0,23,24);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (29,"01:30:00",2743,0.0,306.421,24,25);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (30,"03:30:00",7220,378.461,0.0,25,1);
+
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (36,"04:30:00",10000,185.211,0.0,26,27);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (37,"02:30:00",3500,882.318,0.0,27,28);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (38,"03:00:00",3900,0.0,475.096,28,30);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (39,"04:30:00",8800,1019.36,0.0,30,31);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (40,"04:30:00",8000,0.0,933.16,31,33);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (41,"03:00:00",4000,1018.562,0.0,33,34);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (42,"02:00:00",4100,0.0,473.1234,34,35);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (43,"02:00:00",4000,0.0,352.0988,35,36);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (44,"04:00:00",10500,214.0779,0.0,36,37);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (45,"03:00:00",8000,0.0,900.8397,37,27);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (46,"04:30:00",10000,0.0,185.211,27,26);
+
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (47,"04:30:00",10000,185.211,0.0,26,27);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (48,"02:30:00",3500,131.692,0.0,27,29);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (49,"03:00:00",3900,275.53,0.0,29,30);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (50,"04:30:00",8800,943.865,0.0,30,32);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (51,"04:30:00",8000,0.0,857.665,32,33);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (52,"02:00:00",6100,545.4386,0.0,33,35);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (53,"02:00:00",6000,0.0,352.0988,35,36);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (54,"04:00:00",18500,0.0,686.7618,36,27);
+INSERT INTO TramTrack (id_tramTrack, DuracioEstimada, distancia, desnivellPositiu, desnivellNegatiu, id_puntDePas_origen,id_puntDePas_desti)
+VALUES (55,"04:30:00",10000,0.0,185.211,27,26);
+SELECT * FROM TramTrack;
+
+
+INSERT INTO TipusOpinio (nom,comentari,haveLike) VALUES ("Nom TipusOpinio 1","No la faria mai",NULL);
+INSERT INTO TipusOpinio (nom,comentari,haveLike) VALUES ("Nom TipusOpinio 2","La faré si no hi ha més remei",NULL);
+INSERT INTO TipusOpinio (nom,comentari,haveLike) VALUES ("Nom TipusOpinio 3","Potser la faria",NULL);
+INSERT INTO TipusOpinio (nom,comentari,haveLike) VALUES ("Nom TipusOpinio 4","M'encantaria fer-la",NULL);
+INSERT INTO TipusOpinio (nom,comentari,haveLike) VALUES ("Nom TipusOpinio 5",NULL,true);
+INSERT INTO TipusOpinio (nom,comentari,haveLike) VALUES ("Nom TipusOpinio 6",NULL,false);
+
+INSERT INTO TipusOpinio (nom,comentari,haveLike) VALUES ("Nom TipusOpinio R2 1","M'encantaria fer-la",true);
+
+SELECT * FROM TipusOpinio;
+
+
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (1,5,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (2,5,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (3,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (4,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (5,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (6,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (7,3,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (8,3,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (9,3,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (10,3,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (11,3,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (12,3,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (13,3,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (14,3,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (15,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (16,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (17,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (18,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (19,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (20,1,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (21,6,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (22,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (23,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (24,2,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (25,4,"ajaleo@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (1,1,"dtomacal@yahoo.cat");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (7,1,"dtomacal@yahoo.cat");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (11,2,"dtomacal@yahoo.cat");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (15,1,"dtomacal@yahoo.cat");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (18,2,"dtomacal@yahoo.cat");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (19,1,"dtomacal@yahoo.cat");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (25,1,"dtomacal@yahoo.cat");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (1,3,"heisenberg@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (6,2,"heisenberg@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (9,4,"heisenberg@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (14,1,"heisenberg@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (18,1,"heisenberg@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (25,4,"heisenberg@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (1,2,"rick@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (7,4,"rick@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (8,4,"rick@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (9,4,"rick@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (10,3,"rick@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (11,2,"rick@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (12,1,"rick@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (18,1,"rick@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (19,2,"rick@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (20,3,"rick@gmail.com");
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (25,4,"rick@gmail.com");
+
+INSERT INTO Opinio (id_puntDePas,id_tipusOpinio,correu_persona) VALUES (27,4,"judit121@gmail.com");
+
+SELECT * FROM Opinio;
+
+
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 1",1,NULL);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 2",2,NULL);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 3",3,NULL);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 4",4,NULL);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 5",5,NULL);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 6",NULL,true);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 7",NULL,true);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 8",4,NULL);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 9",3,NULL);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 10",NULL,false);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot 11",NULL,false);
+
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot R2 1",4,NULL);
+INSERT INTO TipusVot (nom,valueEstrelles,haveLike) VALUES ("Nom TipusVot R2 2",3,NULL);
+
+SELECT * FROM TipusVot;
+
+
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-19",1,"ajaleo@gmail.com",1,4);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-20",1,"ajaleo@gmail.com",1,3);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-21",1,"ajaleo@gmail.com",1,4);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-22",1,"ajaleo@gmail.com",1,2);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-23",1,"ajaleo@gmail.com",1,4);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-24",1,"ajaleo@gmail.com",1,5);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-19",1,"dtomacal@yahoo.cat",2,1);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-20",1,"dtomacal@yahoo.cat",2,10);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-21",1,"dtomacal@yahoo.cat",2,9);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-22",1,"dtomacal@yahoo.cat",2,11);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-21",1,"heisenberg@gmail.com",1,2);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-22",1,"heisenberg@gmail.com",1,9);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-23",1,"heisenberg@gmail.com",1,3);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-24",1,"heisenberg@gmail.com",1,7);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-19",1,"rick@gmail.com",1,4);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-20",1,"rick@gmail.com",1,5);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-21",1,"rick@gmail.com",1,9);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-22",1,"rick@gmail.com",1,10);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-23",1,"rick@gmail.com",1,7);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2021-07-26",1,"rick@gmail.com",1,6);
+
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2022-07-23",2,"judit121@gmail.com",4,12);
+INSERT INTO Vot (data,id_ruta,correu_persona,id_grup,id_tipusVot) VALUES ("2022-07-26",2,"juancarlos999@gmail.com",3,13);
+
+SELECT * FROM Vot;
+
+
+INSERT INTO ProgresRuta (estat,correu_persona,id_ruta) VALUES("ACABADA","ajaleo@gmail.com",1); 
+INSERT INTO ProgresRuta (estat,correu_persona,id_ruta) VALUES("ACABADA","dtomacal@yahoo.cat",1); 
+INSERT INTO ProgresRuta (estat,correu_persona,id_ruta) VALUES("ACABADA","rick@gmail.com",1);
+INSERT INTO ProgresRuta (estat,correu_persona,id_ruta) VALUES("FENT_SE","CapitaCC@gmail.com",1); 
+INSERT INTO ProgresRuta (estat,correu_persona,id_ruta) VALUES("FENT_SE","nauin2@gmail.com",1); 
+INSERT INTO ProgresRuta (estat,correu_persona,id_ruta) VALUES("NO_COMENÇADA","juancarlos999@gmail.com",1);
+INSERT INTO ProgresRuta (estat,correu_persona,id_ruta) VALUES("NO_COMENÇADA","judit121@gmail.com",1); 
+
+INSERT INTO ProgresRuta (estat,correu_persona,id_ruta) VALUES("FENT_SE","juancarlos999@gmail.com",2);
+INSERT INTO ProgresRuta (estat,correu_persona,id_ruta) VALUES("FENT_SE","judit121@gmail.com",2); 
+SELECT * FROM ProgresRuta;
+
+
+INSERT INTO Reserva (dateCheckIn,dateCheckOut,tipusPagament,correu_persona,id_allotjament)
+VALUES ("2021-07-19","2021-07-24","ABANS_AMB_ANULACIO","ajaleo@gmail.com",8);
+INSERT INTO Reserva (dateCheckIn,dateCheckOut,tipusPagament,correu_persona,id_allotjament)
+VALUES ("2021-07-19","2021-07-24","ABANS_SENSE_ANULACIO","dtomacal@yahoo.cat",3);
+INSERT INTO Reserva (dateCheckIn,dateCheckOut,tipusPagament,correu_persona,id_allotjament)
+VALUES ("2021-07-19","2021-07-24","EN_ARRIBAR","rick@gmail.com",2);
+INSERT INTO Reserva (dateCheckIn,dateCheckOut,tipusPagament,correu_persona,id_allotjament)
+VALUES ("2022-07-19","2022-07-24","EN_ARRIBAR","CapitaCC@gmail.com",1);
+INSERT INTO Reserva (dateCheckIn,dateCheckOut,tipusPagament,correu_persona,id_allotjament)
+VALUES ("2022-07-19","2022-07-24","ABANS_SENSE_ANULACIO","nauin2@gmail.com",1);
+INSERT INTO Reserva (dateCheckIn,dateCheckOut,tipusPagament,correu_persona,id_allotjament)
+VALUES ("2023-07-19","2023-07-24","ABANS_AMB_ANULACIO","juancarlos999@gmail.com",4);
+INSERT INTO Reserva (dateCheckIn,dateCheckOut,tipusPagament,correu_persona,id_allotjament)
+VALUES ("2023-07-19","2023-07-24","ABANS_AMB_ANULACIO","judit121@gmail.com",5);
+
+INSERT INTO Reserva (dateCheckIn,dateCheckOut,tipusPagament,correu_persona,id_allotjament)
+VALUES ("2022-07-19","2023-07-24","ABANS_AMB_ANULACIO","juancarlos999@gmail.com",6);
+INSERT INTO Reserva (dateCheckIn,dateCheckOut,tipusPagament,correu_persona,id_allotjament)
+VALUES ("2022-07-19","2023-07-24","ABANS_AMB_ANULACIO","judit121@gmail.com",7);
+SELECT * FROM Reserva;
