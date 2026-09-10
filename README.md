@@ -82,3 +82,9 @@ A llarg termini m'agradaria deixar-los penjats en una web més xula. Mentrestant
   - Sistemes Distribuïts
   - Gràfics i Visualització de Dades
   - Lògica i Llenguatges
+
+:eight_pointed_black_star: Sisè curs
+---
+- Onzè Semestre
+  - Ètica i Legislació
+  - Topologia i Geometria Global de Superfícies
